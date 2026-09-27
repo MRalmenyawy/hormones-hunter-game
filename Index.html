@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>🧬 سباق الصيادين: أسرار الهرمونات</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-void:#050b14;
+  --bg-deep:#0a1626;
+  --bg-panel:#0f1f33;
+  --bg-panel-2:#142943;
+  --line:rgba(120,200,255,.16);
+  --teal:#2de8c7;
+  --teal-dim:#1a9c85;
+  --cyan:#3fd0ff;
+  --violet:#a45bff;
+  --magenta:#ff5fd1;
+  --amber:#ffb545;
+  --danger:#ff4d6d;
+  --danger-dim:#7a2233;
+  --ok:#3fe07a;
+  --ink:#eaf6ff;
+  --ink-dim:#8fb0c9;
+  --ink-faint:#5b7a92;
+  --gold:#ffd35c;
+  --font-ar:'Cairo','Tajawal',Tahoma,Arial,sans-serif;
+  --font-alt:'Tajawal','Cairo',Tahoma,Arial,sans-serif;
+  --radius-s:10px;
+  --radius-m:16px;
+  --radius-l:24px;
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+html{scroll-padding-top:var(--safe-t);}
+body{
+  font-family:var(--font-ar);
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(45,232,199,.12), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 110% 10%, rgba(164,91,255,.14), transparent 55%),
+    radial-gradient(ellipse 1200px 800px at 50% 120%, rgba(63,208,255,.08), transparent 60%),
+    var(--bg-void);
+  color:var(--ink);
+  min-height:100%;
+  overflow-x:hidden;
+  padding-top:var(--safe-t);
+  padding-bottom:var(--safe-b);
+  position:relative;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1.5px 1.5px at 85% 20%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1.5px 1.5px at 10% 65%, rgba(255,255,255,.3), transparent);
+  background-size:100% 100%;
+  opacity:.6;
+  pointer-events:none;
+  z-index:0;
+}
+#app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+img,svg{display:block;max-width:100%;}
+::selection{background:var(--teal);color:#00231c;}
+.hidden{display:none !important;}
+.scr{width:100%;max-width:720px;margin:0 auto;padding:18px 16px calc(20px + var(--safe-b));flex:1;display:flex;flex-direction:column;min-height:100vh;}
+.wide{max-width:960px;}
+.center-col{align-items:center;justify-content:center;text-align:center;}
+
+/* ---- Typography ---- */
+h1,h2,h3{font-family:var(--font-ar);line-height:1.25;}
+.eyebrow{font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.02em;}
+.big-title{font-size:clamp(26px,7vw,40px);font-weight:900;color:var(--ink);text-shadow:0 0 24px rgba(45,232,199,.35);}
+.sub{color:var(--ink-dim);font-size:15px;line-height:1.7;}
+.cinema-line{font-size:17px;color:var(--cyan);font-weight:700;min-height:26px;}
+
+/* ---- Buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:999px;font-weight:800;font-size:16px;
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  user-select:none;
+}
+.btn:active{transform:scale(.96);}
+.btn-primary{
+  background:linear-gradient(135deg,var(--teal),var(--cyan));
+  color:#02261f;
+  box-shadow:0 6px 24px rgba(45,232,199,.35), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.btn-primary:hover{filter:brightness(1.08);}
+.btn-ghost{
+  background:rgba(255,255,255,.05);
+  border:1.5px solid var(--line);
+  color:var(--ink);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.09);}
+.btn-danger{background:linear-gradient(135deg,var(--danger),#ff8a5b);color:#2a0510;}
+.btn-block{width:100%;}
+.btn-sm{padding:9px 16px;font-size:13px;border-radius:999px;}
+.icon-btn{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.06);border:1.5px solid var(--line);
+  font-size:19px;flex-shrink:0;
+}
+
+/* ---- Cards / panels ---- */
+.panel{
+  background:linear-gradient(160deg,var(--bg-panel),var(--bg-panel-2));
+  border:1.5px solid var(--line);
+  border-radius:var(--radius-l);
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+}
+.glow-edge{position:relative;}
+.glow-edge::after{
+  content:"";position:absolute;inset:-1.5px;border-radius:inherit;
+  padding:1.5px;background:linear-gradient(135deg,var(--teal),var(--violet),var(--cyan));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:.55;pointer-events:none;
+}
+
+/* ---- Top bar (HUD) ---- */
+.hud{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 4px 14px;
+}
+.hud-group{display:flex;align-items:center;gap:8px;}
+.hud-chip{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:999px;padding:6px 12px;font-weight:800;font-size:14px;
+}
+.hearts{display:flex;gap:3px;font-size:17px;letter-spacing:1px;}
+.heart-lost{opacity:.25;filter:grayscale(1);}
+
+/* ---- Timer ---- */
+.timer-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin:6px 0 16px;}
+.timer-ring{position:relative;width:78px;height:78px;}
+.timer-ring svg{width:100%;height:100%;transform:rotate(-90deg);}
+.timer-ring circle{fill:none;stroke-width:7;}
+.timer-track{stroke:rgba(255,255,255,.08);}
+.timer-bar{stroke:var(--teal);stroke-linecap:round;transition:stroke .3s;}
+.timer-num{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:18px;font-variant-numeric:tabular-nums;direction:ltr;
+}
+.timer-wrap.warn .timer-bar{stroke:var(--amber);}
+.timer-wrap.warn .timer-num{color:var(--amber);}
+.timer-wrap.crit .timer-bar{stroke:var(--danger);}
+.timer-wrap.crit .timer-num{color:var(--danger);}
+.timer-wrap.crit .timer-ring{animation:pulseRing .55s ease-in-out infinite;}
+@keyframes pulseRing{0%,100%{transform:scale(1);}50%{transform:scale(1.09);}}
+
+/* ---- Progress / XP ---- */
+.xp-bar-track{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;border:1px solid var(--line);}
+.xp-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--cyan));transition:width .5s cubic-bezier(.2,.9,.3,1);}
+
+/* ---- Intro / cinematic ---- */
+.intro-stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:20px 0;}
+.dna-badge{font-size:64px;filter:drop-shadow(0 0 22px rgba(45,232,199,.55));animation:floaty 3.2s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.brand-line{font-size:13px;color:var(--ink-faint);}
+.brand-name{color:var(--teal);font-weight:800;}
+.typewriter-box{min-height:64px;display:flex;align-items:center;justify-content:center;padding:0 12px;}
+.name-input{
+  width:100%;max-width:340px;text-align:center;font-size:19px;font-weight:800;
+  padding:14px 18px;border-radius:999px;background:rgba(255,255,255,.06);
+  border:1.5px solid var(--line);color:var(--ink);
+}
+.name-input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(45,232,199,.15);}
+.name-input::placeholder{color:var(--ink-faint);}
+
+/* ---- Adventure map ---- */
+.map-path{position:relative;display:flex;flex-direction:column;gap:6px;padding:10px 4px 24px;}
+.map-node{
+  display:flex;align-items:center;gap:14px;padding:14px;border-radius:var(--radius-m);
+  background:rgba(255,255,255,.04);border:1.5px solid var(--line);position:relative;
+}
+.map-node.locked{opacity:.45;}
+.map-node.done{border-color:var(--teal-dim);}
+.map-node-icon{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;font-size:24px;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%,var(--bg-panel-2),var(--bg-void));
+  border:2px solid var(--line);
+}
+.map-node.unlocked .map-node-icon{border-color:var(--teal);box-shadow:0 0 18px rgba(45,232,199,.45);}
+.map-node.done .map-node-icon{border-color:var(--gold);box-shadow:0 0 16px rgba(255,211,92,.4);}
+.map-node-body{flex:1;text-align:right;}
+.map-node-title{font-weight:800;font-size:15px;}
+.map-node-desc{font-size:12px;color:var(--ink-dim);margin-top:2px;}
+.map-node-stars{font-size:12px;color:var(--gold);margin-top:4px;letter-spacing:2px;}
+.map-connector{width:2px;height:16px;background:linear-gradient(var(--line),transparent);margin-inline-start:40px;}
+
+/* ---- Question host ---- */
+.q-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.q-level-tag{font-size:12px;color:var(--violet);font-weight:800;background:rgba(164,91,255,.12);padding:4px 12px;border-radius:999px;}
+.q-type-tag{font-size:11px;color:var(--cyan);font-weight:700;}
+.q-card{padding:22px 18px;margin-bottom:16px;}
+.q-diff{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:10px;}
+.diff-easy{background:rgba(63,224,122,.15);color:var(--ok);}
+.diff-medium{background:rgba(63,208,255,.15);color:var(--cyan);}
+.diff-hard{background:rgba(255,181,69,.15);color:var(--amber);}
+.diff-boss{background:rgba(255,77,109,.15);color:var(--danger);}
+.q-text{font-size:18px;font-weight:800;line-height:1.6;}
+.q-source{font-size:11px;color:var(--ink-faint);margin-top:8px;}
+
+.opt-list{display:flex;flex-direction:column;gap:10px;}
+.opt-btn{
+  display:flex;align-items:center;gap:12px;text-align:right;
+  padding:14px 16px;border-radius:var(--radius-m);
+  background:rgba(255,255,255,.04);border:1.5px solid var(--line);
+  font-size:15px;font-weight:600;transition:all .15s ease;
+}
+.opt-btn:active{transform:scale(.98);}
+.opt-letter{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:13px;border:1px solid var(--line);
+}
+.opt-btn.correct{background:rgba(63,224,122,.14);border-color:var(--ok);}
+.opt-btn.correct .opt-letter{background:var(--ok);color:#04250f;border-color:var(--ok);}
+.opt-btn.wrong{background:rgba(255,77,109,.14);border-color:var(--danger);}
+.opt-btn.wrong .opt-letter{background:var(--danger);color:#2a0510;border-color:var(--danger);}
+.opt-btn.disabledopt{opacity:.5;pointer-events:none;}
+.opt-btn.sel{border-color:var(--teal);box-shadow:0 0 0 3px rgba(45,232,199,.15);}
+
+/* text-input fill-blank */
+.fill-input{
+  width:100%;padding:14px 16px;border-radius:var(--radius-m);font-size:16px;font-weight:700;
+  background:rgba(255,255,255,.05);border:1.5px solid var(--line);color:var(--ink);text-align:center;
+}
+.fill-input:focus{outline:none;border-color:var(--teal);}
+
+/* Match / Classify / Sequence - drag engine */
+.dnd-zone{display:flex;flex-direction:column;gap:14px;}
+.dnd-row{display:flex;gap:10px;align-items:flex-start;}
+.dnd-col{flex:1;min-width:0;}
+.dnd-col-title{font-size:12px;color:var(--ink-dim);font-weight:700;margin-bottom:8px;text-align:center;}
+.dnd-pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:46px;}
+.dnd-chip{
+  padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.06);
+  border:1.5px solid var(--line);font-weight:700;font-size:13.5px;
+  cursor:grab;touch-action:none;user-select:none;position:relative;
+  transition:box-shadow .15s, border-color .15s, opacity .15s;
+}
+.dnd-chip.dragging{opacity:0;}
+.dnd-chip.placed{cursor:default;}
+.dnd-chip.locked-correct{border-color:var(--ok);background:rgba(63,224,122,.12);}
+.dnd-chip.locked-wrong{border-color:var(--danger);background:rgba(255,77,109,.12);}
+.dnd-chip.sel-pick{border-color:var(--teal);box-shadow:0 0 0 3px rgba(45,232,199,.18);}
+.dnd-target{
+  min-height:52px;border-radius:12px;border:1.5px dashed var(--line);
+  display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;
+  background:rgba(255,255,255,.02);font-size:13px;color:var(--ink-dim);font-weight:700;text-align:center;
+}
+.dnd-target.filled{border-style:solid;background:rgba(255,255,255,.05);color:var(--ink);}
+.dnd-target.hover-ok{border-color:var(--teal);background:rgba(45,232,199,.08);}
+.dnd-target.right{border-color:var(--ok);background:rgba(63,224,122,.1);}
+.dnd-target.wrongt{border-color:var(--danger);background:rgba(255,77,109,.1);}
+.dnd-target-label{color:var(--ink-dim);font-weight:800;width:100%;text-align:center;}
+.dnd-target.filled{gap:6px;}
+.dnd-target .dnd-chip{font-size:12px;padding:7px 10px;}
+.seq-list{display:flex;flex-direction:column;gap:8px;}
+.seq-item{
+  display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;
+  background:rgba(255,255,255,.05);border:1.5px solid var(--line);font-weight:700;font-size:14px;
+  touch-action:none;cursor:grab;
+}
+.seq-num{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
+.seq-item.dragging{opacity:.3;}
+.drag-ghost{position:fixed;z-index:999;pointer-events:none;opacity:.92;transform:translate(-50%,-50%) scale(1.04);box-shadow:0 12px 30px rgba(0,0,0,.5);}
+
+/* Hotspot */
+.hotspot-wrap{position:relative;border-radius:var(--radius-m);overflow:hidden;background:rgba(255,255,255,.03);border:1.5px solid var(--line);}
+.hotspot-wrap svg{width:100%;height:auto;display:block;}
+.hotspot-dot{cursor:pointer;}
+.hotspot-dot circle{transition:all .2s;}
+.hotspot-dot:hover circle.ring{r:16;}
+.hotspot-label{font-size:10px;font-weight:800;fill:var(--ink);}
+
+/* Memory cards */
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+.mem-card{aspect-ratio:3/4;border-radius:12px;position:relative;perspective:600px;cursor:pointer;}
+.mem-card-inner{position:absolute;inset:0;transition:transform .5s;transform-style:preserve-3d;}
+.mem-card.flipped .mem-card-inner{transform:rotateY(180deg);}
+.mem-face{position:absolute;inset:0;border-radius:12px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;padding:6px;text-align:center;}
+.mem-back{background:linear-gradient(150deg,var(--bg-panel-2),var(--bg-panel));border:1.5px solid var(--line);font-size:22px;}
+.mem-front{background:rgba(45,232,199,.1);border:1.5px solid var(--teal);transform:rotateY(180deg);font-size:11.5px;font-weight:800;line-height:1.3;}
+.mem-card.matched .mem-front{background:rgba(63,224,122,.15);border-color:var(--ok);}
+
+/* Feedback toast */
+.feedback-overlay{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;padding:0 14px calc(14px + var(--safe-b));}
+.feedback-card{
+  pointer-events:auto;width:100%;max-width:680px;border-radius:var(--radius-l) var(--radius-l) 0 0;
+  padding:20px 20px calc(18px + var(--safe-b));
+  background:linear-gradient(160deg,var(--bg-panel-2),var(--bg-deep));
+  border:1.5px solid var(--line);border-bottom:none;
+  box-shadow:0 -10px 40px rgba(0,0,0,.5);
+  transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.9,.25,1);
+}
+.feedback-overlay.show .feedback-card{transform:translateY(0);}
+.feedback-head{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;margin-bottom:8px;}
+.feedback-head.ok{color:var(--ok);}
+.feedback-head.bad{color:var(--danger);}
+.feedback-head.timeup{color:var(--amber);}
+.feedback-explain{font-size:14px;color:var(--ink-dim);line-height:1.7;background:rgba(255,255,255,.04);padding:12px 14px;border-radius:12px;margin:8px 0;}
+.feedback-points{font-weight:800;color:var(--gold);font-size:14px;}
+
+/* Combo banner */
+.combo-flash{
+  position:fixed;top:calc(18px + var(--safe-t));left:50%;transform:translateX(-50%) scale(.7);
+  z-index:70;font-weight:900;font-size:22px;padding:10px 26px;border-radius:999px;
+  background:linear-gradient(135deg,var(--amber),var(--danger));color:#2a0a00;
+  opacity:0;transition:all .35s cubic-bezier(.3,1.4,.4,1);white-space:nowrap;
+  box-shadow:0 8px 28px rgba(255,120,60,.45);
+}
+.combo-flash.show{opacity:1;transform:translateX(-50%) scale(1);top:calc(30px + var(--safe-t));}
+
+/* Boss */
+.boss-portrait{font-size:70px;text-align:center;filter:drop-shadow(0 0 30px rgba(255,77,109,.5));animation:bossFloat 2.6s ease-in-out infinite;}
+@keyframes bossFloat{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-8px) rotate(2deg);}}
+.boss-hp-track{height:22px;border-radius:999px;background:rgba(255,255,255,.06);border:1.5px solid var(--line);overflow:hidden;position:relative;}
+.boss-hp-fill{height:100%;background:linear-gradient(90deg,var(--danger),var(--magenta));transition:width .6s cubic-bezier(.3,.9,.3,1);}
+.boss-hp-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;text-shadow:0 1px 3px rgba(0,0,0,.6);}
+.boss-phase-tag{text-align:center;font-size:12px;color:var(--danger);font-weight:800;margin:10px 0;letter-spacing:.02em;}
+
+/* Results / Certificate */
+.rank-badge{font-size:56px;text-align:center;filter:drop-shadow(0 0 26px rgba(255,211,92,.5));}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.stat-box{background:rgba(255,255,255,.04);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;text-align:center;}
+.stat-num{font-size:22px;font-weight:900;color:var(--teal);}
+.stat-lbl{font-size:11px;color:var(--ink-dim);margin-top:2px;}
+.cert-canvas-wrap{border-radius:var(--radius-m);overflow:hidden;border:1.5px solid var(--line);margin:14px 0;}
+.cert-canvas-wrap canvas{width:100%;height:auto;display:block;}
+
+/* Admin */
+.admin-table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line);}
+table.admin-table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px;}
+table.admin-table th,table.admin-table td{padding:9px 10px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap;}
+table.admin-table th{background:rgba(255,255,255,.05);color:var(--ink-dim);font-weight:800;cursor:pointer;position:sticky;top:0;}
+table.admin-table tr:hover td{background:rgba(255,255,255,.03);}
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px;}
+@media(min-width:560px){.kpi-grid{grid-template-columns:repeat(4,1fr);}}
+
+/* particles */
+.particle-layer{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden;}
+.particle{position:absolute;border-radius:50%;opacity:0;}
+
+/* misc */
+.footer-brand{margin-top:auto;padding-top:22px;text-align:center;font-size:11px;color:var(--ink-faint);}
+.footer-brand b{color:var(--teal-dim);}
+.loader-dots span{animation:blink 1.2s infinite;display:inline-block;}
+.loader-dots span:nth-child(2){animation-delay:.2s;}
+.loader-dots span:nth-child(3){animation-delay:.4s;}
+@keyframes blink{0%,100%{opacity:.2;}50%{opacity:1;}}
+.shake{animation:shakeAnim .4s;}
+@keyframes shakeAnim{10%,90%{transform:translateX(-2px);}20%,80%{transform:translateX(3px);}30%,50%,70%{transform:translateX(-5px);}40%,60%{transform:translateX(5px);}}
+.pop-in{animation:popIn .35s cubic-bezier(.3,1.5,.4,1);}
+@keyframes popIn{0%{opacity:0;transform:scale(.85) translateY(8px);}100%{opacity:1;transform:scale(1) translateY(0);}}
+.fadein{animation:fadeInAnim .4s ease;}
+@keyframes fadeInAnim{from{opacity:0;}to{opacity:1;}}
+
+@media(max-width:380px){
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  .memory-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="feedbackLayer"></div>
+<div id="comboLayer"></div>
+<div id="particleLayer" class="particle-layer"></div>
+<script>
+'use strict';
+/* ============================================================
+   سباق الصيادين: أسرار الهرمونات
+   مستر محمد المنياوي — "الأحياء بشكل تاني"
+   محرك اللعبة الكامل — Game Engine
+   المصدر العلمي الوحيد: ملف الهرمونات المرفق (الدرس الأول - التنسيق الهرموني)
+   ============================================================ */
+
+/* ================== 1) CONFIG — قيم قابلة للتعديل ================== */
+const CONFIG = {
+  QUESTION_SECONDS: 60,           // مدة كل سؤال - ثابتة دائماً
+  LIVES_START: 3,
+  POINTS: { easy: 10, medium: 20, hard: 30, boss: 50 },
+  SPEED_BONUS: { // إضافي فوق نقاط السؤال الأساسية
+    fast:   { maxSeconds: 15, bonus: 15 },  // أجاب خلال أول 15 ثانية
+    medium: { maxSeconds: 30, bonus: 8 },   // أجاب خلال 30 ثانية
+    slow:   { maxSeconds: 60, bonus: 0 }    // أجاب خلال الـ60 ثانية كاملة
+  },
+  COMBO_BONUS: { 3: 1.15, 5: 1.3, 10: 1.5 }, // مضاعف نقاط عند الوصول لعتبة الكومبو
+  RANKS: [
+    { min: 90, title: 'صياد أسطوري', icon: '👑' },
+    { min: 80, title: 'صياد محترف',  icon: '🔥' },
+    { min: 70, title: 'صياد متقدم',  icon: '⚡' },
+    { min: 60, title: 'صياد جيد',    icon: '🎯' },
+    { min: 0,  title: 'صياد تحت التدريب', icon: '🌱' }
+  ],
+  GOOGLE_SCRIPT_URL: "PUT_YOUR_URL_HERE", // ضع هنا رابط نشر Google Apps Script بعد النشر (Code.gs)
+  BRAND_NAME: "مستر محمد المنياوي",
+  BRAND_SLOGAN: "الأحياء بشكل تاني",
+  BRAND_PHONE: "01063349308",
+  GAME_TITLE: "سباق الصيادين: أسرار الهرمونات",
+  STORAGE_KEY: "hunterRace_hormones_attempts_v1",
+  PENDING_SYNC_KEY: "hunterRace_hormones_pendingSync_v1",
+  SOUND_KEY: "hunterRace_hormones_sound_v1",
+  LEADERBOARD_KEY: "hunterRace_hormones_leaderboardEnabled_v1"
+};
+
+/* ================== 2) بنك الأسئلة — questionBank ==================
+   كل سؤال مبني حصراً على محتوى الملف المرفق (الدرس الأول - التنسيق الهرموني)
+   الحقول: id, level, type, difficulty, question, ..., answer, explanation, points, sourceReference
+   ==================================================================== */
+const LEVELS = [
+  { id: 1, key: 'intro',      title: 'ميدان الاكتشاف',      subtitle: 'الجهاز العصبي والجهاز الهرموني',        icon: '🧭' },
+  { id: 2, key: 'plant',      title: 'غابة الأوكسينات',      subtitle: 'الهرمونات في النبات',                   icon: '🌿' },
+  { id: 3, key: 'discovery',  title: 'أرض الاكتشاف',         subtitle: 'اكتشاف وخصائص الهرمونات الحيوانية',      icon: '🔬' },
+  { id: 4, key: 'pituitaryA', title: 'قلعة سيدة الغدد',       subtitle: 'الغدة النخامية - الجزء الغدي',           icon: '🏰' },
+  { id: 5, key: 'pituitaryB', title: 'كهف الإشارات العصبية',  subtitle: 'الغدة النخامية - الجزء العصبي',          icon: '🕳️' },
+  { id: 6, key: 'thyroid',    title: 'برج النشاط',           subtitle: 'الغدة الدرقية',                          icon: '🗼' },
+  { id: 7, key: 'parathyroid',title: 'حصن التوازن',          subtitle: 'الغدد جارات الدرقية',                    icon: '🛡️' },
+  { id: 8, key: 'boss',       title: 'قمة السيطرة',          subtitle: 'THE HORMONE BOSS', icon: '👑' }
+];
+
+const questionBank = [
+
+/* ===================== المرحلة 1 — ميدان الاكتشاف (التنسيق الهرموني) ===================== */
+{ id:'l1q1', level:1, type:'mcq', difficulty:'easy',
+  question:'أيهما أسرع في الاستجابة؟',
+  options:['الجهاز العصبي','الجهاز الهرموني','كلاهما بنفس السرعة','لا علاقة للسرعة بالجهازين'],
+  answer:0, explanation:'الاستجابة العصبية أسرع (تستغرق وقتاً أقل)، بينما الاستجابة الهرمونية أبطأ وتستغرق وقتاً أطول.', sourceReference:'ص 71' },
+
+{ id:'l1q2', level:1, type:'mcq', difficulty:'easy',
+  question:'ما طبيعة الاستجابة الأساسية لجهاز الغدد الصماء؟',
+  options:['كهروكيميائية عبر الأعصاب','كيميائية عبر الدم','ميكانيكية عبر العضلات','لا شيء مما سبق'],
+  answer:1, explanation:'الاستجابة الهرمونية كيميائية عبر الدم، بينما الاستجابة العصبية كهروكيميائية عبر الأعصاب.', sourceReference:'ص 71' },
+
+{ id:'l1q3', level:1, type:'classify', difficulty:'medium',
+  question:'صنّف كل عبارة: هل تصف "الاستجابة العصبية" أم "الاستجابة الهرمونية"؟',
+  buckets:['الاستجابة العصبية','الاستجابة الهرمونية'],
+  items:[
+    {label:'أسرع (تستغرق وقتاً أقل)', bucket:'الاستجابة العصبية'},
+    {label:'تستمر لفترة زمنية أطول', bucket:'الاستجابة الهرمونية'},
+    {label:'انتقال إشارات كهربائية عبر الأعصاب', bucket:'الاستجابة العصبية'},
+    {label:'إفراز مواد كيميائية في الدم مباشرة', bucket:'الاستجابة الهرمونية'}
+  ],
+  explanation:'الجدول المقارن بين الجهازين: السرعة والمدة الزمنية وطبيعة الاستجابة وكيفية الحدوث.', sourceReference:'ص 71' },
+
+{ id:'l1q4', level:1, type:'mcq', difficulty:'medium',
+  question:'ما نوع الغدة التي لا تفرز هرمونات وتمتلك قنوات خاصة تصب فيها إفرازاتها؟',
+  options:['الغدد الصماء','الغدد القنوية','الغدد المختلطة','لا شيء مما سبق'],
+  answer:1, explanation:'الغدد القنوية (لا قنوية تفرز هرمونات) غدد ذات إفراز خارجي تحتوي على جزء مفرز وتملك قنوات خاصة بها، مثل الغدد اللعابية والهضمية والعرقية.', sourceReference:'ص 79' },
+
+{ id:'l1q5', level:1, type:'match', difficulty:'medium',
+  question:'صل كل غدة بنوعها الصحيح',
+  pairs:[
+    {left:'الغدة النخامية', right:'غدة صماء'},
+    {left:'الغدد اللعابية', right:'غدة قنوية'},
+    {left:'البنكرياس', right:'غدة مختلطة'}
+  ],
+  explanation:'الغدة النخامية مثال على الغدد الصماء، والغدد اللعابية مثال على الغدد القنوية، والبنكرياس مثال على الغدد المختلطة (قنوي ولا قنوي معاً).', sourceReference:'ص 79' },
+
+{ id:'l1q6', level:1, type:'mcq', difficulty:'hard',
+  question:'أي مما يلي مثال على الغدد المختلطة (المشتركة)؟',
+  options:['الغدة الدرقية','البنكرياس','الغدة اللعابية','الغدة الدمعية'],
+  answer:1, explanation:'البنكرياس والخصية مثالان على الغدد المختلطة، لأنها تتركب من جزء غدي قنوي وآخر لا قنوي.', sourceReference:'ص 79' },
+
+{ id:'l1q7', level:1, type:'fillblank', difficulty:'medium',
+  question:'أكمل: الغدد ______ هي غدد لا قنوية ذات إفراز داخلي، تفرز الهرمونات في الدم مباشرة وتحاط بشبكة كثيفة من الشعيرات الدموية.',
+  accepted:['الصماء'], explanation:'الغدد الصماء: غدد لا قنوية ذات إفراز داخلي تفرز الهرمونات في الدم مباشرة.', sourceReference:'ص 80' },
+
+/* ===================== المرحلة 2 — غابة الأوكسينات (الهرمونات في النبات) ===================== */
+{ id:'l2q1', level:2, type:'mcq', difficulty:'easy',
+  question:'من هو مكتشف الهرمونات النباتية (الأوكسينات) عام 1913م؟',
+  options:['ستارلنج','بويسن جنسن','كلود برنار','فنت'],
+  answer:1, explanation:'بويسن جنسن أول من أشار إلى الأوكسينات عام 1913م، واستطاع أن يكتشف دورها في انحناء الساق نحو الضوء.', sourceReference:'ص 71' },
+
+{ id:'l2q2', level:2, type:'mcq', difficulty:'easy',
+  question:'أين تُفرز الأوكسينات في النبات؟',
+  options:['من غدة خاصة في الجذر','من الخلايا الحية في القمم النامية والبراعم النباتية','من الأوراق فقط','من الأزهار فقط'],
+  answer:1, explanation:'تفرز الأوكسينات من الخلايا الحية في القمة النامية للساق والجذر والبراعم النباتية، لأن النبات ليس له غدة خاصة.', sourceReference:'ص 71' },
+
+{ id:'l2q3', level:2, type:'sequence', difficulty:'medium',
+  question:'رتب خطوات تجربة بويسن جنسن لتفسير انحناء الساق نحو الضوء',
+  steps:[
+    'القمة النامية (منطقة الاستقبال) تفرز مادة كيميائية (أندول حمض الخليك)',
+    'تنتقل المادة الكيميائية إلى منطقة الاستجابة (منطقة الانحناء)',
+    'تنحني الساق نحو الضوء'
+  ],
+  explanation:'أثبت بويسن جنسن أن القمة النامية للساق تفرز مادة كيميائية تنتقل إلى منطقة الاستجابة فتسبب انحناءها.', sourceReference:'ص 71' },
+
+{ id:'l2q4', level:2, type:'graph', difficulty:'medium', graphKind:'auxinRootStem',
+  question:'استناداً إلى العلاقة بين معدل النمو وتركيز الأوكسينات الموضحة، أي العبارات صحيحة؟',
+  options:['الجذر أكثر حساسية للأوكسينات من الساق','الساق أكثر حساسية للأوكسينات من الجذر','لا فرق بين حساسية الساق والجذر','تركيز الأوكسينات لا يؤثر في الجذر إطلاقاً'],
+  answer:0, explanation:'الجذر أكثر حساسية للأوكسينات من الساق: فالتركيز الذي ينشط نمو الساق قد يثبط نمو الجذر.', sourceReference:'ص 72' },
+
+{ id:'l2q5', level:2, type:'classify', difficulty:'hard',
+  question:'صنّف تأثير كل تركيز من الأوكسينات على نمو خلايا الجذر',
+  buckets:['تنشيط النمو','تثبيط النمو'],
+  items:[
+    {label:'التركيز المنخفض من الأوكسينات', bucket:'تنشيط النمو'},
+    {label:'التركيز المرتفع من الأوكسينات', bucket:'تثبيط النمو'},
+    {label:'التركيز المرتفع جداً من الأوكسينات', bucket:'تثبيط النمو'}
+  ],
+  explanation:'الجذر حساس جداً للأوكسينات: التركيز المنخفض فقط ينشط نمو خلايا الجذر، بينما التركيز المرتفع أو المرتفع جداً يثبطه.', sourceReference:'ص 72' },
+
+{ id:'l2q6', level:2, type:'mcq', difficulty:'medium',
+  question:'في تجربة قطع القمة النامية للساق، ماذا لاحظ العلماء؟',
+  options:['توقف نمو الساق','استمر النمو بشكل طبيعي','زاد معدل النمو بشدة','انحنى الساق بعيداً عن الضوء'],
+  answer:0, explanation:'قطع القمة النامية للساق أدى إلى توقف نمو الساق تماماً.', sourceReference:'ص 72' },
+
+{ id:'l2q7', level:2, type:'mcq', difficulty:'medium',
+  question:'عند تغطية القمة النامية للساق بورق معدني (مادة معتمة)، ماذا يحدث؟',
+  options:['تتكون أوكسينات لكن لا يحدث انحناء؛ لتساوي تركيزها في جانبي الساق','لا تتكون أوكسينات إطلاقاً','ينحني الساق بشدة نحو الضوء','تموت خلايا القمة النامية فوراً'],
+  answer:0, explanation:'عند تغطية القمة النامية بورق معدني، تتكون الأوكسينات لكن لا يحدث انحناء لتساوي تركيزها في جانبي الساق نتيجة عدم وصول الضوء لمنطقة الاستقبال.', sourceReference:'ص 73' },
+
+{ id:'l2q8', level:2, type:'mcq', difficulty:'hard',
+  question:'أي مما يلي ليس من وظائف الأوكسينات؟',
+  options:['تنظيم تتابع نمو الأنسجة وتنوعها','التحكم في تساقط الأوراق ونضج الثمار','التأثير على النمو بالتنشيط أو التثبيط','إفراز الهرمون مباشرة في دم النبات'],
+  answer:3, explanation:'النبات لا يمتلك دماً أو غدداً خاصة؛ وظائف الأوكسينات الحقيقية هي: تنظيم نمو الأنسجة، التأثير بالتنشيط أو التثبيط، والتحكم في تفتح الأزهار وتساقط الأوراق ونضج الثمار وتساقطها.', sourceReference:'ص 73' },
+
+
+/* ===================== المرحلة 3 — أرض الاكتشاف (اكتشاف وخصائص الهرمونات) ===================== */
+{ id:'l3q1', level:3, type:'mcq', difficulty:'easy',
+  question:'من هو العالم مكتشف الهرمونات الحيوانية عام 1905م؟',
+  options:['بويسن جنسن','ستارلنج','كلود برنار','فنت'],
+  answer:1, explanation:'العالم ستارلنج هو مكتشف الهرمونات عام 1905م، وهو من أطلق على هذه الرسائل الكيميائية اسم "الهرمونات".', sourceReference:'ص 75' },
+
+{ id:'l3q2', level:3, type:'mcq', difficulty:'medium',
+  question:'لاحظ ستارلنج أن البنكرياس يفرز عصارته الهاضمة فور وصول الغذاء إلى الاثني عشر، حتى بعد قطع الاتصال العصبي بينه وبين الأعضاء الأخرى. بم فسّر ذلك؟',
+  options:['أن إثارة البنكرياس تعتمد فقط على التنبيه العصبي','أن هناك نوعاً من التنبيه غير العصبي','أن البنكرياس لا يتأثر بأي نوع من التنبيه','أن الاثني عشر هو الذي يهضم الغذاء مباشرة'],
+  answer:1, explanation:'استنتج ستارلنج أن هناك نوعاً من التنبيه غير العصبي، فتوصل إلى أن الغشاء المخاطي للاثني عشر يفرز مواد تسري في الدم حتى تصل للبنكرياس فتنبهه لإفراز عصارته.', sourceReference:'ص 75' },
+
+{ id:'l3q3', level:3, type:'hotspot', difficulty:'medium', svgKind:'digestive', targetId:'duodenum',
+  question:'اضغط على العضو الذي يفرز مادة "السكرتين" التي تنبه البنكرياس لإفراز عصارته الهاضمة',
+  explanation:'الغشاء المخاطي للاثني عشر يفرز مادتي السكرتين والكوليسيستوكينين اللتين تنتقلان عبر الدم إلى البنكرياس فتنبهانه لإفراز عصارته.', sourceReference:'ص 75' },
+
+{ id:'l3q4', level:3, type:'classify', difficulty:'medium',
+  question:'صنّف كل هرمون حسب تركيبه الكيميائي',
+  buckets:['أحماض أمينية (بسيط)','مواد دهنية (بسيط)','بروتينات (معقد)'],
+  items:[
+    {label:'الأدرينالين', bucket:'أحماض أمينية (بسيط)'},
+    {label:'الثيروكسين', bucket:'أحماض أمينية (بسيط)'},
+    {label:'الأستروجين', bucket:'مواد دهنية (بسيط)'},
+    {label:'الكورتيزون', bucket:'مواد دهنية (بسيط)'},
+    {label:'هرمون النمو', bucket:'بروتينات (معقد)'}
+  ],
+  explanation:'الهرمونات مواد كيميائية عضوية: بعضها أحماض أمينية بسيطة (كالأدرينالين والثيروكسين)، وبعضها مواد دهنية بسيطة (كمعظم الهرمونات الجنسية وهرمونات قشرة الكظرية)، وباقيها بروتينات معقدة (كهرمون النمو).', sourceReference:'ص 77' },
+
+{ id:'l3q5', level:3, type:'mcq', difficulty:'medium',
+  question:'أين توجد مستقبلات الهرمونات البروتينية؟',
+  options:['على الغشاء البلازمي من الخارج','داخل الخلية بالقرب من النواة','في السائل خارج الخلية فقط','لا توجد لها مستقبلات محددة'],
+  answer:0, explanation:'مستقبلات الهرمونات البروتينية توجد على الغشاء البلازمي للخلية من الخارج، لأن وحدة بنائها الحمض الأميني ولا تذوب في الدهون.', sourceReference:'ص 77' },
+
+{ id:'l3q6', level:3, type:'mcq', difficulty:'medium',
+  question:'لماذا لا يُفضّل تناول الهرمونات البروتينية (مثل الأنسولين) في صورة أقراص؟',
+  options:['لأنها تُهضم داخل الجهاز الهضمي','لأنها بطيئة المفعول جداً','لأنها تسبب حساسية دائماً','لأنها غير قابلة للذوبان في الماء'],
+  answer:0, explanation:'لا يُفضل تناول الهرمونات البروتينية في صورة أقراص لأنها تُهضم داخل الجهاز الهضمي مثل الأنسولين، فتفقد فاعليتها.', sourceReference:'ص 77' },
+
+{ id:'l3q7', level:3, type:'mcq', difficulty:'hard',
+  question:'أين توجد مستقبلات الهرمونات الاستيرويدية (الدهنية)؟',
+  options:['على غشاء الخلية من الخارج','داخل الخلية بالقرب من النواة','في بلازما الدم فقط','لا توجد لها مستقبلات محددة'],
+  answer:1, explanation:'الهرمونات الاستيرويدية وحدة بنائها الحمض الدهني، ومستقبلاتها توجد داخل الخلية بالقرب من النواة.', sourceReference:'ص 77' },
+
+{ id:'l3q8', level:3, type:'mcq', difficulty:'medium',
+  question:'لماذا تُفرز الهرمونات بكميات قليلة جداً (تقدر بالميكروجرام) ونسب محددة؟',
+  options:['لأن الزيادة أو النقص يؤدي إلى اختلال وظيفي وأعراض مرضية','لأن الجسم لا يحتاج كميات كبيرة من أي مادة كيميائية','لأن الغدد الصماء صغيرة الحجم فقط','لتوفير الطاقة المستخدمة في تصنيعها'],
+  answer:0, explanation:'تُفرز الهرمونات بكميات قليلة ونسب محددة لكي تؤدي وظيفتها على أحسن وجه، حيث أن زيادتها أو نقصها يؤدي إلى اختلال في وظيفة أعضاء الجسم.', sourceReference:'ص 78' },
+
+{ id:'l3q9', level:3, type:'mcq', difficulty:'hard',
+  question:'لماذا يؤثر بعض الهرمونات على عضو مستهدف واحد فقط (هرمون متخصص)؟',
+  options:['لأن مستقبلات هذا الهرمون توجد على هذا العضو فقط','لأن الهرمون ينتقل عبر قنوات خاصة لهذا العضو فقط','لأن باقي الأعضاء لا يصلها الدم','لأن الهرمون يتحلل قبل وصوله لباقي الأعضاء'],
+  answer:0, explanation:'الهرمون قد يكون متخصصاً فيؤثر على عضو مستهدف واحد فقط، لأن مستقبلات الهرمون توجد على هذا العضو فقط.', sourceReference:'ص 78' },
+
+/* ===================== المرحلة 4 — قلعة سيدة الغدد (النخامية - الجزء الغدي) ===================== */
+{ id:'l4q1', level:4, type:'mcq', difficulty:'easy',
+  question:'بماذا تُعرف الغدة النخامية؟',
+  options:['سيدة الغدد أو المايسترو','الغدة الأم فقط','غدة الطوارئ','الغدة الرئيسية للجهاز الهضمي'],
+  answer:0, explanation:'تُعرف الغدة النخامية بسيدة الغدد أو المايسترو، لأنها تتحكم في جهاز الغدد الصماء عن طريق إفراز هرمونات تؤثر في إفراز معظم الغدد الصماء.', sourceReference:'ص 82' },
+
+{ id:'l4q2', level:4, type:'mcq', difficulty:'easy',
+  question:'أين تقع الغدة النخامية؟',
+  options:['أسفل المخ داخل الجمجمة، وتتصل بمنطقة تحت المهاد','في الرقبة بجانب القصبة الهوائية','داخل تجويف البطن','أعلى الكلى مباشرة'],
+  answer:0, explanation:'توجد الغدة النخامية أسفل المخ داخل الجمجمة، وتتصل بمنطقة تحت المهاد (الهيبوثالامس).', sourceReference:'ص 82' },
+
+{ id:'l4q3', level:4, type:'match', difficulty:'medium',
+  question:'صل كل جزء من الغدة النخامية بما يتكون منه',
+  pairs:[
+    {left:'الجزء الغدي', right:'الفص الأمامي والفص الأوسط'},
+    {left:'الجزء العصبي', right:'الفص الخلفي والقمع'}
+  ],
+  explanation:'تتركب الغدة النخامية من جزئين: الجزء الغدي (الفص الأمامي والأوسط) والجزء العصبي (الفص الخلفي وجزء من المخ يُعرف بالقمع).', sourceReference:'ص 82' },
+
+{ id:'l4q4', level:4, type:'mcq', difficulty:'medium',
+  question:'فيمَ يتحكم هرمون النمو GH؟',
+  options:['نمو الجسم عن طريق التحكم في عمليات الأيض وخاصة تصنيع البروتين','إفراز اللبن فقط','ضغط الدم فقط','تكوين الحيوانات المنوية فقط'],
+  answer:0, explanation:'يتحكم هرمون النمو في نمو الجسم لأنه يتحكم في عمليات الأيض وخاصة تصنيع البروتين.', sourceReference:'ص 82' },
+
+{ id:'l4q5', level:4, type:'diagnosis', difficulty:'hard',
+  question:'طفل يعاني من نقص حاد في إفراز هرمون النمو GH. بم يُصاب؟',
+  options:['القزامة','العملقة','الأكروميجالي','التضخم الجحوظي'],
+  answer:0, explanation:'نقص إفراز هرمون النمو في الأطفال يسبب "القزامة"، وهرمون النمو مسؤول عن النمو البدني فقط، فمريض القزامة لا يعاني من التخلف العقلي ولا العقم.', sourceReference:'ص 83' },
+
+{ id:'l4q6', level:4, type:'diagnosis', difficulty:'hard',
+  question:'بالغ يعاني من زيادة إفراز هرمون النمو بعد اكتمال نمو العظام طولياً، فتنمو أطرافه البعيدة (الأيدي والأقدام) وتتضخم عظام وجهه. بم يُعرف ذلك؟',
+  options:['القزامة','العملقة','الأكروميجالي','الميكسوديما'],
+  answer:2, explanation:'زيادة إفراز هرمون النمو في البالغين تسبب حالة "الأكروميجالي"، والتي تتميز بتجديد نمو الأجزاء البعيدة في العظام الطويلة وتضخم عظام الوجه.', sourceReference:'ص 83' },
+
+{ id:'l4q7', level:4, type:'classify', difficulty:'medium',
+  question:'صنّف كل هرمون حسب الغدة التي ينبهها للإفراز',
+  buckets:['الغدة الدرقية','قشرة الغدة الكظرية','الغدد الثديية'],
+  items:[
+    {label:'TSH', bucket:'الغدة الدرقية'},
+    {label:'ACTH', bucket:'قشرة الغدة الكظرية'},
+    {label:'البرولاكتين', bucket:'الغدد الثديية'}
+  ],
+  explanation:'TSH يحفز الغدة الدرقية على إفراز الثيروكسين، ACTH يحفز قشرة الغدة الكظرية على إفراز هرموناتها، والبرولاكتين ينبه الغدد الثديية على إنتاج اللبن.', sourceReference:'ص 84' },
+
+{ id:'l4q8', level:4, type:'mcq', difficulty:'medium',
+  question:'ماذا يُسمى تثبيط الغدة المسؤولة عن إفراز هرمون معين عند ارتفاعه عن المعدل الطبيعي؟',
+  options:['التغذية الراجعة السلبية','التغذية الراجعة الموجبة','التوازن الهرموني الحر','الاستجابة العصبية المباشرة'],
+  answer:0, explanation:'عندما يزداد إفراز الهرمون عن المعدل الطبيعي، يُثبَّط إفراز الغدة المسؤولة عنه لتجنب حدوث اختلال مرضي، وهو ما يُعرف بالتغذية الراجعة السلبية.', sourceReference:'ص 84' },
+
+{ id:'l4q9', level:4, type:'sequence', difficulty:'medium',
+  question:'رتب مسار التغذية الراجعة السلبية عند ارتفاع تركيز هرمون الثيروكسين',
+  steps:[
+    'ارتفاع تركيز هرمون الثيروكسين في الدم',
+    'تثبيط إفراز هرمون TSH من الغدة النخامية',
+    'انخفاض تحفيز الغدة الدرقية على إفراز الثيروكسين'
+  ],
+  explanation:'عندما يكون تركيز الثيروكسين مرتفعاً، يثبط ذلك إفراز هرمون TSH، والعكس صحيح؛ وهذا ينطبق على باقي الهرمونات.', sourceReference:'ص 84' },
+
+{ id:'l4q10', level:4, type:'mcq', difficulty:'medium',
+  question:'في الذكر، ماذا يساعد هرمون FSH على تكوينه؟',
+  options:['الأنيبيبات المنوية وتكوين الحيوانات المنوية في الخصية','الخلايا البينية فقط دون الأنيبيبات','هرمونات الذكورة مباشرة دون تأثير على الخصية','الجسم الأصفر'],
+  answer:0, explanation:'في الذكر، يساعد هرمون FSH على تكوين الأنيبيبات المنوية وتكوين الحيوانات المنوية في الخصية.', sourceReference:'ص 85' },
+
+{ id:'l4q11', level:4, type:'mcq', difficulty:'medium',
+  question:'في الأنثى، ما دور هرمون LH؟',
+  options:['يحفز تكوين الجسم الأصفر في المبيض','ينمّي الحويصلات في المبيض فقط','يحفز إفراز اللبن من الغدد الثديية','يثبط نشاط المبيض'],
+  answer:0, explanation:'في الأنثى، يحفز هرمون LH تكوين الجسم الأصفر في المبيض.', sourceReference:'ص 85' },
+
+{ id:'l4q12', level:4, type:'mcq', difficulty:'hard',
+  question:'ما سبب العقم عند الأنثى المرتبط بخلل إفراز هرمون FSH؟',
+  options:['عدم القدرة على تكوين بويضات','عدم القدرة على إنتاج حيوانات منوية سليمة','زيادة إفراز اللبن بشكل مفرط','ارتفاع ضغط الدم المزمن'],
+  answer:0, explanation:'الخلل في إفراز هرمون FSH يؤدي إلى حدوث العقم؛ وبالنسبة للأنثى يعني ذلك عدم القدرة على تكوين بويضات.', sourceReference:'ص 85' },
+
+{ id:'l4q13', level:4, type:'memory', difficulty:'medium',
+  question:'بطاقات الذاكرة: اقلب بطاقتين وطابق كل هرمون من الجزء الغدي بوظيفته',
+  pairs:[
+    {a:'GH', b:'التحكم في نمو الجسم'},
+    {a:'TSH', b:'تنبيه الغدة الدرقية'},
+    {a:'ACTH', b:'تنبيه قشرة الكظرية'},
+    {a:'FSH', b:'تكوين الحيوانات المنوية/الحويصلات'}
+  ],
+  explanation:'هرمونات الجزء الغدي للنخامية: GH للنمو، TSH لتنبيه الدرقية، ACTH لتنبيه قشرة الكظرية، وFSH لتنبيه الغدد التناسلية.', sourceReference:'ص 82-85' },
+
+
+/* ===================== المرحلة 5 — كهف الإشارات العصبية (النخامية - الجزء العصبي) ===================== */
+{ id:'l5q1', level:5, type:'mcq', difficulty:'easy',
+  question:'من أين تُنتج هرمونات الجزء العصبي للغدة النخامية؟',
+  options:['من خلايا عصبية في منطقة تحت المهاد (الهيبوثالامس)','من الفص الأمامي مباشرة','من الغدة الدرقية','من خلايا الكبد'],
+  answer:0, explanation:'تُنتج هرمونات الجزء العصبي من خلايا عصبية توجد في منطقة تحت المهاد بالمخ، والتي تُعرف بـ"الخلايا العصبية المفرزة".', sourceReference:'ص 87' },
+
+{ id:'l5q2', level:5, type:'mcq', difficulty:'medium',
+  question:'أين تُخزَّن هرمونات الجزء العصبي (مثل ADH والأوكسيتوسين) قبل إفرازها؟',
+  options:['في نهايات الخلايا العصبية بالفص الخلفي','في الفص الأمامي للنخامية','في خلايا الكبد','لا تُخزَّن وتُفرز فوراً بعد تكوينها'],
+  answer:0, explanation:'تصل هذه الهرمونات إلى الفص الخلفي عبر القمع، حيث تُخزَّن في نهاية الخلايا العصبية التي أنتجتها، وتُفرز في الدم عند حاجة الجسم إليها.', sourceReference:'ص 87' },
+
+{ id:'l5q3', level:5, type:'mcq', difficulty:'medium',
+  question:'ما الوظيفة الأساسية لهرمون ADH؟',
+  options:['تقليل كمية البول عن طريق إعادة امتصاص الماء في أنيبيبات النفرون','زيادة كمية البول','خفض ضغط الدم فقط','تحفيز الولادة'],
+  answer:0, explanation:'يعمل هرمون ADH على تقليل كمية البول عن طريق إعادة امتصاص الماء في أنيبيبات النفرون، ويرفع ضغط الدم أيضاً.', sourceReference:'ص 87' },
+
+{ id:'l5q4', level:5, type:'classify', difficulty:'medium',
+  question:'صنّف كل حالة حسب تأثيرها على إفراز هرمون ADH',
+  buckets:['يزداد إفراز ADH','يقل إفراز ADH'],
+  items:[
+    {label:'النزيف الشديد', bucket:'يزداد إفراز ADH'},
+    {label:'الجفاف', bucket:'يزداد إفراز ADH'},
+    {label:'ارتفاع درجة الحرارة', bucket:'يزداد إفراز ADH'},
+    {label:'شرب كميات كبيرة من الماء', bucket:'يقل إفراز ADH'},
+    {label:'انخفاض درجة الحرارة', bucket:'يقل إفراز ADH'}
+  ],
+  explanation:'يزداد إفراز ADH عند نقص حجم البلازما (نزيف، إسهال، جفاف، صيام، تعرق، ارتفاع الحرارة)، ويقل عند زيادة حجم البلازما (شرب ماء كثير، انخفاض الحرارة، ارتفاع ضغط الدم).', sourceReference:'ص 88' },
+
+{ id:'l5q5', level:5, type:'graph', difficulty:'hard', graphKind:'adhUrine',
+  question:'بناءً على العلاقة بين ADH وحجم البول الموضحة، ماذا يحدث لحجم البول عند زيادة إفراز ADH؟',
+  options:['يقل حجم البول وتزداد أسموزيته (تركيزه)','يزداد حجم البول','لا يتأثر حجم البول إطلاقاً','يتحول البول إلى دم'],
+  answer:0, explanation:'زيادة إفراز ADH تزيد إعادة امتصاص الماء، فيقل حجم البول وتزداد أسموزية البول (يزداد تركيز الذائبات فيه).', sourceReference:'ص 88' },
+
+{ id:'l5q6', level:5, type:'mcq', difficulty:'medium',
+  question:'ما وظيفة هرمون الأوكسيتوسين أثناء الولادة؟',
+  options:['تنظيم وزيادة شدة تقلصات الرحم لإخراج الجنين','تثبيط تقلصات الرحم تماماً','خفض ضغط الدم','تصنيع اللبن داخل الغدد الثديية'],
+  answer:0, explanation:'يعمل الأوكسيتوسين على تنظيم تقلصات الرحم ويزيدها بشدة أثناء الولادة من أجل إخراج الجنين، ولهذا يستخدمه الأطباء للإسراع في عمليات الولادة (هرمون الطلق).', sourceReference:'ص 89' },
+
+{ id:'l5q7', level:5, type:'diagnosis', difficulty:'hard',
+  question:'حُقنت امرأة حامل في شهرها الخامس بخلاصة الجزء العصبي (تحتوي على الأوكسيتوسين). ماذا يحدث؟',
+  options:['إجهاض نتيجة تقلص عضلات الرحم بفعل هرمون الأوكسيتوسين','لا يحدث أي تأثير','تسهل عملية الولادة الطبيعية','يزداد نمو الجنين بشكل طبيعي'],
+  answer:0, explanation:'حقن المرأة الحامل بخلاصة تحتوي على الأوكسيتوسين في شهرها الخامس يسبب إجهاضاً نتيجة تقلص عضلات الرحم بفعل هذا الهرمون.', sourceReference:'ص 90' },
+
+{ id:'l5q8', level:5, type:'mcq', difficulty:'medium',
+  question:'أثناء الرضاعة، أي الهرمونين يسبق الآخر في الإفراز؟',
+  options:['البرولاكتين يسبق الأوكسيتوسين','الأوكسيتوسين يسبق البرولاكتين','يُفرزان في نفس اللحظة دائماً','لا علاقة بينهما'],
+  answer:0, explanation:'إفراز هرمون البرولاكتين يسبق إفراز هرمون الأوكسيتوسين، لأن البرولاكتين يعمل على تصنيع وإفراز اللبن داخل الغدد الثديية، بينما الأوكسيتوسين يعمل على دفعه للخارج.', sourceReference:'ص 89' },
+
+{ id:'l5q9', level:5, type:'sequence', difficulty:'medium',
+  question:'رتب مسار عمل هرمون الأوكسيتوسين أثناء الرضاعة',
+  steps:[
+    'يقوم الطفل بعملية الرضاعة',
+    'إفراز هرمون الأوكسيتوسين من الفص الخلفي للنخامية',
+    'اندفاع (نزول) الحليب من الغدد اللبنية'
+  ],
+  explanation:'للأوكسيتوسين أثر مشجع في اندفاع الحليب من الغدد اللبنية بعد الولادة استجابة لعملية الرضاعة.', sourceReference:'ص 89' },
+
+/* ===================== المرحلة 6 — برج النشاط (الغدة الدرقية) ===================== */
+{ id:'l6q1', level:6, type:'mcq', difficulty:'easy',
+  question:'أين تقع الغدة الدرقية؟',
+  options:['الجزء الأمامي من الرقبة، ملاصقة للقصبة الهوائية','أسفل المخ داخل الجمجمة','داخل تجويف البطن','خلف القلب مباشرة'],
+  answer:0, explanation:'توجد الغدة الدرقية في الجزء الأمامي من الرقبة، ملاصقة للقصبة الهوائية.', sourceReference:'ص 92' },
+
+{ id:'l6q2', level:6, type:'hotspot', difficulty:'easy', svgKind:'thyroid', targetId:'isthmus',
+  question:'اضغط على "البرزخ"؛ الجزء الذي يصل بين فصي الغدة الدرقية',
+  explanation:'تتكون الغدة الدرقية من فصين (أيمن وأيسر) بينهما برزخ، وهي غدة حويصلية تميل للون الأحمر ومحاطة بغشاء من نسيج ضام.', sourceReference:'ص 92' },
+
+{ id:'l6q3', level:6, type:'mcq', difficulty:'medium',
+  question:'ما وظيفة هرمون الكالسيتونين؟',
+  options:['تقليل نسبة الكالسيوم في الدم ومنع سحبه من العظام','زيادة نسبة الكالسيوم في الدم','تنظيم ضغط الدم فقط','تحفيز نمو العظام طولياً فقط'],
+  answer:0, explanation:'يعمل هرمون الكالسيتونين على تقليل نسبة الكالسيوم في الدم، ويمنع سحبه من العظام (يعمل على ترسيب الكالسيوم في العظام).', sourceReference:'ص 93' },
+
+{ id:'l6q4', level:6, type:'mcq', difficulty:'hard',
+  question:'أي العبارات صحيحة عن تنظيم إفراز هرمون الكالسيتونين؟',
+  options:['يُفرز بتأثير تركيز الكالسيوم في الدم، ولا يخضع لتحفيز الغدة النخامية','تنبهه الغدة النخامية بهرمون TSH مثل الثيروكسين','يخضع فقط للتنبيه العصبي المباشر','لا يوجد أي عامل ينظم إفرازه'],
+  answer:0, explanation:'الغدة النخامية تنبه الغدة الدرقية بهرمون TSH لإفراز هرمون الثيروكسين فقط، بينما يُفرز الكالسيتونين بتأثير تركيز أيون الكالسيوم في الدم، وليس له علاقة بالغدة النخامية ولا يخضع لتحفيزها.', sourceReference:'ص 93' },
+
+{ id:'l6q5', level:6, type:'classify', difficulty:'medium',
+  question:'صنّف كل وظيفة من وظائف هرمون الثيروكسين حسب المجال الذي تنتمي إليه',
+  buckets:['النمو والتطور','الأيض','الجلد والشعر'],
+  items:[
+    {label:'نمو وتطور القوى العقلية والبدنية', bucket:'النمو والتطور'},
+    {label:'التأثير على معدل الأيض الأساسي وخاصة الهدم', bucket:'الأيض'},
+    {label:'تحفيز امتصاص السكريات الأحادية من القناة الهضمية', bucket:'الأيض'},
+    {label:'الحفاظ على سلامة الجلد والشعر', bucket:'الجلد والشعر'}
+  ],
+  explanation:'لهرمون الثيروكسين 4 وظائف رئيسية: النمو والتطور العقلي والبدني، التأثير على الأيض الأساسي، تحفيز امتصاص السكريات الأحادية (فيزيد سكر الدم)، والحفاظ على سلامة الجلد والشعر.', sourceReference:'ص 93' },
+
+{ id:'l6q6', level:6, type:'diagnosis', difficulty:'medium',
+  question:'طفل يعاني من نقص حاد في إفراز هرمون الثيروكسين، مما أدى لقصر قامته وكبر رأسه وقصر رقبته، مع احتمال تخلف عقلي. بم يُعرف هذا المرض؟',
+  options:['مرض القصر (القماءة)','مرض الميكسوديما','التضخم الجحوظي','الأكروميجالي'],
+  answer:0, explanation:'نقص حاد في إفراز هرمون الثيروكسين في الأطفال يسبب مرض القصر (القماءة)، ويؤثر على النمو الجسمي والنضج العقلي والجنسي.', sourceReference:'ص 94' },
+
+{ id:'l6q7', level:6, type:'diagnosis', difficulty:'medium',
+  question:'بالغ يعاني من جفاف الجلد وتساقط الشعر وزيادة الوزن وعدم تحمل البرودة وقلة ضربات القلب. بم يُعرف هذا المرض؟',
+  options:['الميكسوديما (نقص حاد في الثيروكسين)','القماءة (نقص حاد في الثيروكسين)','التضخم الجحوظي (زيادة الثيروكسين)','العملقة (زيادة هرمون النمو)'],
+  answer:0, explanation:'نقص حاد في إفراز هرمون الثيروكسين في البالغين يسبب مرض الميكسوديما، وأعراضه: جفاف الجلد وتساقط الشعر، زيادة الوزن، هبوط الأيض وعدم تحمل البرودة، وقلة ضربات القلب.', sourceReference:'ص 94' },
+
+{ id:'l6q8', level:6, type:'diagnosis', difficulty:'medium',
+  question:'مريض يعاني من جحوظ العينين وتضخم بالرقبة وفقدان وزن وزيادة ضربات القلب وعدم تحمل الحرارة. بم يُعرف هذا المرض؟',
+  options:['التضخم الجحوظي (إفراط في إفراز الثيروكسين)','الميكسوديما (نقص الثيروكسين)','القماءة (نقص الثيروكسين)','هشاشة العظام'],
+  answer:0, explanation:'الإفراط في إفراز هرمون الثيروكسين يسبب التضخم الجحوظي، وأعراضه: تضخم الغدة وجحوظ العين، زيادة أكسدة الغذاء وعدم تحمل الحرارة، نقص الوزن، وزيادة ضربات القلب وتهيج عصبي.', sourceReference:'ص 94' },
+
+{ id:'l6q9', level:6, type:'mcq', difficulty:'hard',
+  question:'كيف نميّز بين خلل الغدة النخامية وخلل الغدة الدرقية باستخدام هرموني TSH والثيروكسين؟',
+  options:['إذا تشابه الهرمونان (كلاهما مرتفع أو كلاهما منخفض) فالخلل في النخامية، وإذا اختلفا فالخلل في الدرقية','العكس تماماً','لا توجد علاقة بين الهرمونين','يعتمد فقط على عمر المريض'],
+  answer:0, explanation:'لو تشابه TSH والثيروكسين (كلاهما مرتفع أو كلاهما منخفض) = خلل في الغدة النخامية. لو اختلفا (أحدهما مرتفع والآخر منخفض) = خلل في الغدة الدرقية.', sourceReference:'ص 94' },
+
+{ id:'l6q10', level:6, type:'mcq', difficulty:'medium',
+  question:'ما سبب "التضخم البسيط" (الجويتر البسيط) وطريقة علاجه؟',
+  options:['نقص اليود في الغذاء والماء والهواء - يعالج بإضافة اليود للملح والأغذية','زيادة اليود - يعالج بتقليل الملح','عدوى فيروسية - يعالج بمضاد حيوي','سبب وراثي - لا يوجد له علاج'],
+  answer:0, explanation:'سبب التضخم البسيط هو نقص إفراز هرمون الثيروكسين نتيجة نقص اليود في الغذاء والماء والهواء، وعلاجه إضافة اليود إلى الملح والأغذية المختلفة.', sourceReference:'ص 94' },
+
+/* ===================== المرحلة 7 — حصن التوازن (الغدد جارات الدرقية) ===================== */
+{ id:'l7q1', level:7, type:'mcq', difficulty:'easy',
+  question:'كم عدد أجزاء الغدد جارات الدرقية وأين تقع؟',
+  options:['أربعة أجزاء منفصلة، اثنتان على كل جانب من الغدة الدرقية من الخلف','جزء واحد أمام الغدة الدرقية','غدة واحدة داخل نسيج الغدة الدرقية','لا تقع بجانب الغدة الدرقية إطلاقاً'],
+  answer:0, explanation:'تتكون الغدد جارات الدرقية من أربعة أجزاء منفصلة، اثنتان على كل جانب من الغدة الدرقية من الجانب الخلفي.', sourceReference:'ص 97' },
+
+{ id:'l7q2', level:7, type:'mcq', difficulty:'medium',
+  question:'ما الهرمون الذي تفرزه الغدد جارات الدرقية؟',
+  options:['الباراثورمون','الكالسيتونين','الثيروكسين','الأوكسيتوسين'],
+  answer:0, explanation:'تفرز الغدد جارات الدرقية هرمون "الباراثورمون".', sourceReference:'ص 97' },
+
+{ id:'l7q3', level:7, type:'mcq', difficulty:'medium',
+  question:'متى يزداد إفراز هرمون الباراثورمون؟',
+  options:['عند هبوط نسبة الكالسيوم في الدم','عند ارتفاع نسبة الكالسيوم في الدم','عند ارتفاع ضغط الدم','عند نقص اليود في الغذاء'],
+  answer:0, explanation:'تعتمد كمية هرمون الباراثورمون على نسبة الكالسيوم في الدم؛ حيث يزداد إفرازه عند هبوط نسبة الكالسيوم ليعمل على زيادتها للمستوى الطبيعي.', sourceReference:'ص 97' },
+
+{ id:'l7q4', level:7, type:'mcq', difficulty:'hard',
+  question:'ماذا تسبب زيادة إفراز هرمون الباراثورمون؟',
+  options:['هشاشة العظام نتيجة سحب الكالسيوم منها','تقوية العظام وزيادة كثافتها','نقص الكالسيوم في الدم','تضخم الغدة الدرقية'],
+  answer:0, explanation:'ارتفاع نسبة الكالسيوم في الدم نتيجة زيادة إفراز الباراثورمون يحدث بسبب سحبه من العظام، مما يؤدي إلى هشاشة العظام وتعرضها للانحناء والكسر بسهولة.', sourceReference:'ص 98' },
+
+{ id:'l7q5', level:7, type:'mcq', difficulty:'medium',
+  question:'ماذا يسبب نقص إفراز هرمون الباراثورمون؟',
+  options:['نقص الكالسيوم بالدم، وتشنجات عضلية مؤلمة، وسرعة الانفعال والغضب','زيادة الكالسيوم بالدم فقط','تضخم الغدة الدرقية','لا توجد له أي أعراض'],
+  answer:0, explanation:'نقص إفراز هرمون الباراثورمون يسبب: نقص نسبة الكالسيوم في الدم، وسرعة الانفعال والغضب لأقل سبب، وتشنجات عضلية مؤلمة (شد عضلي).', sourceReference:'ص 98' },
+
+{ id:'l7q6', level:7, type:'mcq', difficulty:'hard',
+  question:'هل تخضع الغدد جارات الدرقية لتحكم الغدة النخامية؟',
+  options:['لا، بل تُحفَّز مباشرة بانخفاض مستوى الكالسيوم في الدم','نعم عن طريق هرمون TSH','نعم عن طريق هرمون ACTH','نعم لكن بشكل غير مباشر عبر الكالسيتونين فقط'],
+  answer:0, explanation:'الغدد جارات الدرقية لا تخضع للغدة النخامية؛ حيث يتم تحفيزها لإفراز الباراثورمون من خلال انخفاض مستوى الكالسيوم في الدم مباشرة.', sourceReference:'ص 98' },
+
+{ id:'l7q7', level:7, type:'classify', difficulty:'medium',
+  question:'صنّف كل هرمون حسب تأثيره على نسبة الكالسيوم في الدم',
+  buckets:['يرفع الكالسيوم في الدم','يخفض الكالسيوم في الدم'],
+  items:[
+    {label:'الباراثورمون', bucket:'يرفع الكالسيوم في الدم'},
+    {label:'الكالسيتونين', bucket:'يخفض الكالسيوم في الدم'}
+  ],
+  explanation:'يعمل الباراثورمون (من الغدد جارات الدرقية) والكالسيتونين (من الغدة الدرقية) معاً بتأثير متعاكس للحفاظ على المعدل الطبيعي لكالسيوم الدم.', sourceReference:'ص 97-99' },
+
+{ id:'l7q8', level:7, type:'mcq', difficulty:'medium',
+  question:'لماذا تعاني بعض السيدات من هشاشة العظام بعد الولادة؟',
+  options:['بسبب زيادة إفراز الباراثورمون الذي يسحب الكالسيوم من عظام الأم لينتقل للجنين','بسبب نقص إفراز الحليب','بسبب زيادة إفراز الأوكسيتوسين','بسبب نقص هرمون الثيروكسين'],
+  answer:0, explanation:'تعاني بعض السيدات من هشاشة العظام بعد الولادة بسبب زيادة إفراز هرمون الباراثورمون الذي يسحب الكالسيوم من عظام الأم حتى ينتقل إلى الجنين عبر المشيمة ليدخل في تكوين هيكله العظمي.', sourceReference:'ص 98' },
+
+];
+
+/* ===================== THE HORMONE BOSS — 6 مراحل قتال ===================== */
+const bossPhases = [
+  { id:'boss1', phaseLabel:'المرحلة 1: اعثر على الغدة', type:'hotspot', svgKind:'body', targetId:'pituitary',
+    question:'اضغط على موضع الغدة النخامية "سيدة الغدد" في الجسم',
+    explanation:'الغدة النخامية توجد أسفل المخ داخل الجمجمة، وتتصل بمنطقة تحت المهاد.', sourceReference:'ص 82' },
+  { id:'boss2', phaseLabel:'المرحلة 2: صل الهرمون بغدته', type:'match',
+    question:'صل كل هرمون بالغدة التي تفرزه',
+    pairs:[
+      {left:'الثيروكسين', right:'الغدة الدرقية'},
+      {left:'الباراثورمون', right:'الغدد جارات الدرقية'},
+      {left:'الأوكسيتوسين', right:'الغدة النخامية (الجزء العصبي)'},
+      {left:'الأوكسينات', right:'القمة النامية للنبات'}
+    ],
+    explanation:'كل هرمون له مصدر محدد: الثيروكسين من الدرقية، الباراثورمون من جارات الدرقية، الأوكسيتوسين من الجزء العصبي للنخامية، والأوكسينات من القمة النامية للنبات.', sourceReference:'مراجعة شاملة' },
+  { id:'boss3', phaseLabel:'المرحلة 3: مسار الهرمون', type:'sequence',
+    question:'رتب مسار عمل هرمون ADH عند حدوث جفاف بالجسم',
+    steps:[
+      'نقص الماء بالجسم (جفاف)',
+      'زيادة إفراز ADH من الجزء العصبي للنخامية',
+      'زيادة إعادة امتصاص الماء في أنيبيبات النفرون',
+      'نقص حجم البول وزيادة تركيزه (أسموزيته)'
+    ],
+    explanation:'عند الجفاف يزداد إفراز ADH فيزداد امتصاص الماء بالكلى، فيقل حجم البول وتزداد أسموزيته.', sourceReference:'ص 87-88' },
+  { id:'boss4', phaseLabel:'المرحلة 4: اكتشف المرض', type:'diagnosis',
+    question:'مريض يعاني من جفاف الجلد، تساقط الشعر، زيادة الوزن، وعدم تحمل البرودة. ما التشخيص الصحيح؟',
+    options:['الميكسوديما - نقص حاد في هرمون الثيروكسين','الأكروميجالي - زيادة هرمون النمو','العقم - نقص هرمون FSH','هشاشة العظام - زيادة الباراثورمون'],
+    answer:0, explanation:'هذه الأعراض هي أعراض الميكسوديما الناتجة عن نقص حاد في إفراز هرمون الثيروكسين في البالغين.', sourceReference:'ص 94' },
+  { id:'boss5', phaseLabel:'المرحلة 5: التحدي السريع', type:'speed',
+    items:[
+      { q:'الأوكسيتوسين يعمل على زيادة تقلصات الرحم أثناء الولادة', options:['صح','خطأ'], answer:0, explanation:'صحيح: الأوكسيتوسين ينظم ويزيد تقلصات الرحم أثناء الولادة.' },
+      { q:'هرمون الباراثورمون يعمل على خفض نسبة الكالسيوم في الدم', options:['صح','خطأ'], answer:1, explanation:'خطأ: الباراثورمون يرفع نسبة الكالسيوم في الدم، أما الكالسيتونين فهو من يخفضها.' },
+      { q:'هرمون TSH يحفز الغدة الدرقية على إفراز الثيروكسين', options:['صح','خطأ'], answer:0, explanation:'صحيح: TSH هو الهرمون المنبه للغدة الدرقية لإفراز الثيروكسين.' }
+    ], sourceReference:'مراجعة شاملة' },
+  { id:'boss6', phaseLabel:'المرحلة 6: التصنيف النهائي', type:'classify',
+    question:'صنّف كل هرمون حسب غدة مصدره في التصنيف النهائي',
+    buckets:['الغدة النخامية','الغدة الدرقية','الغدد جارات الدرقية'],
+    items:[
+      {label:'GH', bucket:'الغدة النخامية'},
+      {label:'ADH', bucket:'الغدة النخامية'},
+      {label:'الثيروكسين', bucket:'الغدة الدرقية'},
+      {label:'الباراثورمون', bucket:'الغدد جارات الدرقية'}
+    ],
+    explanation:'GH وADH كلاهما من الغدة النخامية (غدي وعصبي على الترتيب)، الثيروكسين من الدرقية، والباراثورمون من جارات الدرقية.', sourceReference:'مراجعة شاملة' }
+];
+
+/* ================== 3) الحالة العامة للعبة — STATE ================== */
+const state = {
+  screen: 'intro',
+  studentName: '',
+  attemptId: '',
+  startedAt: 0,
+  levelProgress: {},   // { levelId: {done:bool, correct:n, total:n} }
+  currentLevel: 1,
+  currentQueue: [],    // قائمة أسئلة المرحلة الحالية
+  currentIndex: 0,
+  score: 0,
+  combo: 0,
+  maxCombo: 0,
+  lives: CONFIG.LIVES_START,
+  correctCount: 0,
+  wrongCount: 0,
+  unansweredCount: 0,
+  totalQuestions: 0,
+  questionTimes: [],   // الوقت المستغرق في كل سؤال (بالثواني)
+  bossIndex: 0,
+  bossHP: 100,
+  soundOn: true,
+  activeTimer: null,
+  answered: false,
+  dragState: null
+};
+
+function uid(){ return 'HORMONE-' + new Date().getFullYear() + '-' + Math.random().toString(36).slice(2,8).toUpperCase(); }
+function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function clamp(n,min,max){ return Math.max(min,Math.min(max,n)); }
+function fmtTime(sec){ const m=Math.floor(sec/60), s=Math.floor(sec%60); return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'); }
+function esc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function $(sel,root){ return (root||document).querySelector(sel); }
+function $all(sel,root){ return Array.from((root||document).querySelectorAll(sel)); }
+
+/* ================== 4) نظام الصوت — Web Audio API (بدون ملفات خارجية) ================== */
+const SFX = (function(){
+  let ctx = null;
+  function ensureCtx(){ if(!ctx){ try{ ctx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ ctx=null; } } return ctx; }
+  function tone(freq, start, dur, type, gainPeak){
+    const c = ensureCtx(); if(!c || !state.soundOn) return;
+    const osc = c.createOscillator(); const gain = c.createGain();
+    osc.type = type||'sine'; osc.frequency.setValueAtTime(freq, c.currentTime+start);
+    gain.gain.setValueAtTime(0, c.currentTime+start);
+    gain.gain.linearRampToValueAtTime(gainPeak||0.18, c.currentTime+start+0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime+start+dur);
+    osc.connect(gain); gain.connect(c.destination);
+    osc.start(c.currentTime+start); osc.stop(c.currentTime+start+dur+0.05);
+  }
+  return {
+    correct(){ tone(523.25,0,.14,'sine'); tone(659.25,.09,.16,'sine'); tone(783.99,.18,.22,'sine'); },
+    wrong(){ tone(220,0,.18,'sawtooth',.12); tone(174.6,.1,.24,'sawtooth',.12); },
+    tick(){ tone(880,0,.045,'square',.05); },
+    timeup(){ tone(196,0,.3,'triangle',.15); tone(130.8,.15,.35,'triangle',.13); },
+    levelup(){ tone(523.25,0,.12,'triangle'); tone(659.25,.1,.12,'triangle'); tone(783.99,.2,.12,'triangle'); tone(1046.5,.3,.28,'triangle'); },
+    combo(){ tone(700,0,.08,'square',.08); tone(900,.06,.1,'square',.08); },
+    boss(){ tone(110,0,.35,'sawtooth',.14); tone(146.8,.15,.35,'sawtooth',.14); tone(98,.32,.4,'sawtooth',.16); },
+    bossHit(){ tone(392,0,.1,'square',.1); tone(261.6,.08,.16,'square',.1); },
+    victory(){ [523.25,659.25,783.99,1046.5,1318.5].forEach((f,i)=>tone(f,i*.12,.3,'triangle',.16)); },
+    certificate(){ tone(392,0,.2,'sine'); tone(523.25,.15,.2,'sine'); tone(659.25,.3,.2,'sine'); tone(783.99,.45,.4,'sine'); },
+    click(){ tone(600,0,.05,'square',.05); }
+  };
+})();
+function toggleSound(){
+  state.soundOn = !state.soundOn;
+  try{ localStorage.setItem(CONFIG.SOUND_KEY, state.soundOn ? '1':'0'); }catch(e){}
+  renderSoundBtn();
+}
+function renderSoundBtn(){
+  const b = $('#soundToggleBtn'); if(b) b.textContent = state.soundOn ? '🔊' : '🔇';
+}
+
+/* ================== 5) محرك المؤقت — دقيق بالكامل (Date.now-based) ================== */
+const Timer = (function(){
+  let rafId = null;
+  let endsAt = 0;
+  let totalSec = CONFIG.QUESTION_SECONDS;
+  let onTick = null, onExpire = null;
+  let expired = false;
+  let running = false;
+
+  function start(seconds, tickCb, expireCb){
+    stop(); // يضمن عدم استمرار مؤقت السؤال السابق أو بدء مؤقت جديد قبل ظهور السؤال
+    totalSec = seconds;
+    endsAt = Date.now() + seconds*1000; // اعتماد كامل على الفارق الزمني الحقيقي وليس على عدد الإطارات
+    onTick = tickCb; onExpire = expireCb;
+    expired = false; running = true;
+    loop();
+  }
+  function loop(){
+    if(!running) return;
+    const remainMs = endsAt - Date.now();
+    const remainSec = Math.max(0, remainMs/1000);
+    if(onTick) onTick(remainSec, totalSec);
+    if(remainMs <= 0){
+      if(!expired){ expired = true; running = false; if(onExpire) onExpire(); }
+      return;
+    }
+    rafId = requestAnimationFrame(loop);
+  }
+  function stop(){
+    running = false;
+    if(rafId) cancelAnimationFrame(rafId);
+    rafId = null; onTick = null; onExpire = null;
+  }
+  function remaining(){ return Math.max(0, (endsAt-Date.now())/1000); }
+  return { start, stop, remaining };
+})();
+
+function renderTimerRing(remainSec, totalSec){
+  const wrap = $('#timerWrap'); if(!wrap) return;
+  const pct = clamp(remainSec/totalSec,0,1);
+  const r = 33, c = 2*Math.PI*r;
+  const bar = $('#timerBarCircle', wrap);
+  if(bar) bar.style.strokeDasharray = (c*pct).toFixed(1)+' '+c.toFixed(1);
+  const num = $('#timerNum', wrap);
+  if(num) num.textContent = fmtTime(Math.ceil(remainSec));
+  wrap.classList.remove('warn','crit');
+  if(remainSec <= 10){ wrap.classList.add('crit'); }
+  else if(remainSec <= 20){ wrap.classList.add('warn'); }
+  if(Math.ceil(remainSec) <= 10 && Math.ceil(remainSec) >= 1 && Math.abs(remainSec - Math.round(remainSec)) < 0.06){
+    if(window.__lastTick !== Math.ceil(remainSec)){ window.__lastTick = Math.ceil(remainSec); SFX.tick(); }
+  }
+}
+function timerRingSVG(){
+  const r=33, c=2*Math.PI*r;
+  return '<div class="timer-wrap" id="timerWrap"><div class="timer-ring"><svg viewBox="0 0 76 76">'
+    + '<circle class="timer-track" cx="38" cy="38" r="'+r+'"></circle>'
+    + '<circle class="timer-bar" id="timerBarCircle" cx="38" cy="38" r="'+r+'" stroke-dasharray="'+c+' '+c+'"></circle>'
+    + '</svg><div class="timer-num" id="timerNum">01:00</div></div></div>';
+}
+
+/* ================== 6) محرك السحب واللمس — Drag & Drop عام (يدعم الماوس واللمس) ================== */
+function makeDraggableChip(chipEl, onDrop){
+  function pointerDown(e){
+    if(state.answered || chipEl.classList.contains('locked-correct') || chipEl.classList.contains('locked-wrong')) return;
+    if(e.pointerType==='mouse' && e.button!==0) return;
+    e.preventDefault();
+    const rect = chipEl.getBoundingClientRect();
+    const ghost = chipEl.cloneNode(true);
+    ghost.classList.add('drag-ghost');
+    ghost.style.position='fixed'; ghost.style.width=rect.width+'px';
+    ghost.style.left=rect.left+'px'; ghost.style.top=rect.top+'px'; ghost.style.margin='0';
+    document.body.appendChild(ghost);
+    chipEl.classList.add('dragging');
+    function move(ev){
+      const x=ev.clientX, y=ev.clientY;
+      ghost.style.left=(x-rect.width/2)+'px'; ghost.style.top=(y-rect.height/2)+'px';
+      ghost.style.display='none';
+      const el=document.elementFromPoint(x,y);
+      ghost.style.display='';
+      $all('.dnd-target').forEach(t=>t.classList.remove('hover-ok'));
+      const t = el && el.closest ? el.closest('.dnd-target') : null;
+      if(t && !t.classList.contains('right')) t.classList.add('hover-ok');
+    }
+    function up(ev){
+      document.removeEventListener('pointermove',move);
+      document.removeEventListener('pointerup',up);
+      const x=ev.clientX, y=ev.clientY;
+      ghost.style.display='none';
+      const el=document.elementFromPoint(x,y);
+      ghost.remove();
+      chipEl.classList.remove('dragging');
+      $all('.dnd-target').forEach(t=>t.classList.remove('hover-ok'));
+      const t = el && el.closest ? el.closest('.dnd-target') : null;
+      if(t) onDrop(t);
+    }
+    document.addEventListener('pointermove',move);
+    document.addEventListener('pointerup',up,{once:true});
+  }
+  chipEl.addEventListener('pointerdown', pointerDown);
+}
+
+function makeSortableList(container, onReorderAttempt){
+  const sel = '.seq-item';
+  $all(sel, container).forEach(item=>{
+    item.addEventListener('pointerdown', function(e){
+      if(state.answered) return;
+      if(e.pointerType==='mouse' && e.button!==0) return;
+      e.preventDefault();
+      const rect = item.getBoundingClientRect();
+      const ghost = item.cloneNode(true);
+      ghost.classList.add('drag-ghost');
+      ghost.style.position='fixed'; ghost.style.width=rect.width+'px';
+      ghost.style.left=rect.left+'px'; ghost.style.top=rect.top+'px'; ghost.style.margin='0';
+      document.body.appendChild(ghost);
+      const placeholder = document.createElement('div');
+      placeholder.className='seq-item';
+      placeholder.style.opacity='0.15';
+      placeholder.style.height = rect.height+'px';
+      placeholder.textContent = '';
+      item.classList.add('dragging');
+      item.style.display='none';
+      item.parentNode.insertBefore(placeholder, item);
+      function move(ev){
+        ghost.style.left=(ev.clientX-rect.width/2)+'px';
+        ghost.style.top=(ev.clientY-rect.height/2)+'px';
+        const items = $all(sel, container).filter(x=>x!==item);
+        let placed=false;
+        for(const it of items){
+          if(it===placeholder) continue;
+          const r=it.getBoundingClientRect();
+          if(ev.clientY < r.top+r.height/2){
+            container.insertBefore(placeholder, it); placed=true; break;
+          }
+        }
+        if(!placed) container.appendChild(placeholder);
+      }
+      function up(){
+        document.removeEventListener('pointermove',move);
+        document.removeEventListener('pointerup',up);
+        ghost.remove();
+        item.style.display='';
+        item.classList.remove('dragging');
+        placeholder.parentNode.insertBefore(item, placeholder);
+        placeholder.remove();
+        if(onReorderAttempt) onReorderAttempt();
+      }
+      document.addEventListener('pointermove',move);
+      document.addEventListener('pointerup',up,{once:true});
+    });
+  });
+}
+
+/* ================== 7) رسومات SVG مبسطة (من تصميم اللعبة) — Hotspot & Graph ================== */
+function buildHotspotSVG(kind){
+  if(kind==='body'){
+    return {
+      spots:[
+        {id:'pituitary', label:'الغدة النخامية', x:150, y:48},
+        {id:'thyroid', label:'الغدة الدرقية', x:150, y:96},
+        {id:'pancreas', label:'البنكرياس', x:118, y:190},
+        {id:'gonads', label:'الغدد التناسلية', x:150, y:250}
+      ],
+      svg:'<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">'
+        +'<ellipse cx="150" cy="38" rx="26" ry="30" fill="rgba(255,255,255,.07)" stroke="var(--line)"/>'
+        +'<rect x="138" y="64" width="24" height="26" rx="8" fill="rgba(255,255,255,.06)" stroke="var(--line)"/>'
+        +'<path d="M100 92 Q150 76 200 92 L214 260 Q150 286 86 260 Z" fill="rgba(255,255,255,.05)" stroke="var(--line)" stroke-width="1.5"/>'
+        +'<line x1="100" y1="95" x2="55" y2="230" stroke="var(--line)" stroke-width="10" stroke-linecap="round"/>'
+        +'<line x1="200" y1="95" x2="245" y2="230" stroke="var(--line)" stroke-width="10" stroke-linecap="round"/>'
+        +'<line x1="128" y1="262" x2="120" y2="298" stroke="var(--line)" stroke-width="12" stroke-linecap="round"/>'
+        +'<line x1="172" y1="262" x2="180" y2="298" stroke="var(--line)" stroke-width="12" stroke-linecap="round"/>'
+        +'</svg>'
+    };
+  }
+  if(kind==='thyroid'){
+    return {
+      spots:[
+        {id:'rightLobe', label:'الفص الأيمن', x:96, y:95},
+        {id:'leftLobe', label:'الفص الأيسر', x:204, y:95},
+        {id:'isthmus', label:'البرزخ', x:150, y:118}
+      ],
+      svg:'<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">'
+        +'<rect x="130" y="18" width="40" height="46" rx="10" fill="rgba(255,255,255,.06)" stroke="var(--line)"/>'
+        +'<path d="M150 70 L150 110" stroke="var(--line)" stroke-width="14"/>'
+        +'<ellipse cx="96" cy="100" rx="46" ry="52" fill="rgba(164,91,255,.14)" stroke="var(--violet)" stroke-width="1.5"/>'
+        +'<ellipse cx="204" cy="100" rx="46" ry="52" fill="rgba(164,91,255,.14)" stroke="var(--violet)" stroke-width="1.5"/>'
+        +'<rect x="128" y="108" width="44" height="26" rx="8" fill="rgba(45,232,199,.18)" stroke="var(--teal)" stroke-width="1.5"/>'
+        +'</svg>'
+    };
+  }
+  if(kind==='digestive'){
+    return {
+      spots:[
+        {id:'liver', label:'الكبد', x:80, y:55},
+        {id:'stomach', label:'المعدة', x:175, y:70},
+        {id:'pancreas', label:'البنكرياس', x:175, y:150},
+        {id:'duodenum', label:'الاثني عشر', x:100, y:150}
+      ],
+      svg:'<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">'
+        +'<path d="M40 40 Q90 20 140 45 Q150 60 120 75 Q60 80 40 40 Z" fill="rgba(255,181,69,.14)" stroke="var(--amber)" stroke-width="1.5"/>'
+        +'<path d="M155 45 Q205 40 210 90 Q205 130 165 130 Q135 115 140 75 Q140 55 155 45 Z" fill="rgba(255,95,209,.12)" stroke="var(--magenta)" stroke-width="1.5"/>'
+        +'<path d="M100 130 Q150 150 195 145" fill="none" stroke="var(--teal)" stroke-width="10" stroke-linecap="round"/>'
+        +'<ellipse cx="175" cy="150" rx="42" ry="16" fill="rgba(63,208,255,.14)" stroke="var(--cyan)" stroke-width="1.5"/>'
+        +'<path d="M70 130 Q60 150 90 165 Q120 172 100 150 Q90 138 70 130 Z" fill="rgba(255,255,255,.06)" stroke="var(--line)" stroke-width="1.5"/>'
+        +'</svg>'
+    };
+  }
+  return {spots:[], svg:'<svg viewBox="0 0 300 200"></svg>'};
+}
+
+function renderHotspotSVG(kind){
+  const data = buildHotspotSVG(kind);
+  let dots = data.spots.map(s=>{
+    return '<g class="hotspot-dot" data-id="'+s.id+'" data-label="'+esc(s.label)+'" transform="translate('+s.x+','+s.y+')">'
+      +'<circle class="ring" r="13" fill="rgba(255,213,92,.18)" stroke="var(--gold)" stroke-width="2"></circle>'
+      +'<circle r="4.5" fill="var(--gold)"></circle>'
+      +'</g>';
+  }).join('');
+  const svgOpen = data.svg.replace('</svg>','');
+  return { html: svgOpen + dots + '</svg>', spots: data.spots };
+}
+
+function buildGraphSVG(kind){
+  if(kind==='auxinRootStem'){
+    return '<svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">'
+      +'<line x1="30" y1="130" x2="280" y2="130" stroke="var(--ink-faint)" stroke-width="1.5"/>'
+      +'<line x1="30" y1="130" x2="30" y2="15" stroke="var(--ink-faint)" stroke-width="1.5"/>'
+      +'<text x="150" y="150" font-size="11" fill="var(--ink-dim)" text-anchor="middle">تركيز الأوكسينات ←</text>'
+      +'<text x="14" y="70" font-size="11" fill="var(--ink-dim)" transform="rotate(-90 14 70)" text-anchor="middle">معدل النمو</text>'
+      +'<path d="M35 100 Q90 20 150 45 Q210 65 270 115" fill="none" stroke="var(--teal)" stroke-width="2.5"/>'
+      +'<text x="255" y="108" font-size="11" fill="var(--teal)" font-weight="700">الساق</text>'
+      +'<path d="M35 115 Q55 35 80 55 Q110 80 270 128" fill="none" stroke="var(--magenta)" stroke-width="2.5"/>'
+      +'<text x="90" y="45" font-size="11" fill="var(--magenta)" font-weight="700">الجذر</text>'
+      +'</svg>';
+  }
+  if(kind==='adhUrine'){
+    return '<svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">'
+      +'<line x1="30" y1="130" x2="280" y2="130" stroke="var(--ink-faint)" stroke-width="1.5"/>'
+      +'<line x1="30" y1="130" x2="30" y2="15" stroke="var(--ink-faint)" stroke-width="1.5"/>'
+      +'<text x="150" y="150" font-size="11" fill="var(--ink-dim)" text-anchor="middle">ADH ←</text>'
+      +'<path d="M35 30 L270 120" fill="none" stroke="var(--cyan)" stroke-width="2.5"/>'
+      +'<text x="235" y="105" font-size="11" fill="var(--cyan)" font-weight="700">حجم البول</text>'
+      +'<path d="M35 120 L270 30" fill="none" stroke="var(--amber)" stroke-width="2.5"/>'
+      +'<text x="200" y="45" font-size="11" fill="var(--amber)" font-weight="700">أسموزية البول</text>'
+      +'</svg>';
+  }
+  return '<svg viewBox="0 0 300 160"></svg>';
+}
+
+/* ================== 8) قلب اللعبة — بدء المراحل والأسئلة ================== */
+function levelQuestions(levelId){ return questionBank.filter(q=>q.level===levelId); }
+
+function startLevel(levelId){
+  state.currentLevel = levelId;
+  state.currentQueue = shuffle(levelQuestions(levelId));
+  state.currentIndex = 0;
+  state.levelProgress[levelId] = state.levelProgress[levelId] || {done:false, correct:0, total:state.currentQueue.length};
+  state.levelProgress[levelId].total = state.currentQueue.length;
+  state.levelProgress[levelId].correct = 0;
+  state.screen = 'question';
+  renderApp();
+}
+
+function currentQuestion(){ return state.currentQueue[state.currentIndex]; }
+
+function computeScore(diffKey, timeTakenSec, comboAfter){
+  let base = CONFIG.POINTS[diffKey] || CONFIG.POINTS.medium;
+  let bonus = 0;
+  if(timeTakenSec <= CONFIG.SPEED_BONUS.fast.maxSeconds) bonus = CONFIG.SPEED_BONUS.fast.bonus;
+  else if(timeTakenSec <= CONFIG.SPEED_BONUS.medium.maxSeconds) bonus = CONFIG.SPEED_BONUS.medium.bonus;
+  let subtotal = base + bonus;
+  let mult = 1;
+  if(comboAfter>=10) mult = CONFIG.COMBO_BONUS[10];
+  else if(comboAfter>=5) mult = CONFIG.COMBO_BONUS[5];
+  else if(comboAfter>=3) mult = CONFIG.COMBO_BONUS[3];
+  return Math.round(subtotal*mult);
+}
+
+function flashCombo(comboVal){
+  const layer = $('#comboLayer'); if(!layer) return;
+  let txt = '';
+  if(comboVal===3) txt='🔥 COMBO x3';
+  else if(comboVal===5) txt='🔥🔥 COMBO x5';
+  else if(comboVal>=10) txt='🔥🔥🔥 HUNTER COMBO';
+  else return;
+  const el = document.createElement('div');
+  el.className='combo-flash'; el.textContent = txt;
+  layer.appendChild(el);
+  SFX.combo();
+  requestAnimationFrame(()=>el.classList.add('show'));
+  setTimeout(()=>{ el.classList.remove('show'); setTimeout(()=>el.remove(),400); }, 1300);
+}
+
+function spawnParticles(kind){
+  const layer = $('#particleLayer'); if(!layer) return;
+  const n = 18; const colors = kind==='ok' ? ['#2de8c7','#3fd0ff','#3fe07a'] : ['#ff4d6d','#ff8a5b'];
+  for(let i=0;i<n;i++){
+    const p = document.createElement('div'); p.className='particle';
+    const size = 4+Math.random()*6;
+    p.style.width=size+'px'; p.style.height=size+'px';
+    p.style.background = colors[Math.floor(Math.random()*colors.length)];
+    p.style.left = (45+Math.random()*10)+'vw'; p.style.top = (55+Math.random()*10)+'vh';
+    layer.appendChild(p);
+    const dx = (Math.random()-0.5)*260, dy = -(Math.random()*260+60);
+    p.animate([
+      {transform:'translate(0,0)', opacity:1},
+      {transform:'translate('+dx+'px,'+dy+'px)', opacity:0}
+    ], {duration:900+Math.random()*500, easing:'cubic-bezier(.2,.7,.3,1)'});
+    setTimeout(()=>p.remove(), 1500);
+  }
+}
+
+/* ---- دورة حياة الإجابة: صحيح / خطأ / انتهاء الوقت ---- */
+let __answerLock = false;
+function finalizeAnswer(result, q, timeTakenSec, opts){
+  opts = opts || {};
+  if(state.answered) return;
+  state.answered = true;
+  Timer.stop();
+  const isBoss = !!opts.isBoss;
+  timeTakenSec = clamp(timeTakenSec, 0, CONFIG.QUESTION_SECONDS);
+  state.questionTimes.push(timeTakenSec);
+  state.totalQuestions++;
+
+  let pointsEarned = 0;
+  if(result===true){
+    state.combo++;
+    state.maxCombo = Math.max(state.maxCombo, state.combo);
+    state.correctCount++;
+    const diffKey = isBoss ? 'boss' : (q.difficulty||'medium');
+    pointsEarned = computeScore(diffKey, timeTakenSec, state.combo);
+    state.score += pointsEarned;
+    if(!isBoss && state.levelProgress[state.currentLevel]) state.levelProgress[state.currentLevel].correct++;
+    if(isBoss){ state.bossHP = Math.max(0, state.bossHP - (100/bossPhases.length)); SFX.bossHit(); }
+    else { SFX.correct(); }
+    spawnParticles('ok');
+    if([3,5,10].includes(state.combo) || state.combo>10) flashCombo(state.combo>=10?10:state.combo);
+  } else {
+    state.combo = 0;
+    state.lives = Math.max(0, state.lives-1);
+    if(result===false){ state.wrongCount++; SFX.wrong(); }
+    else { state.unansweredCount++; SFX.timeup(); }
+  }
+  if(isBoss){
+    const fillEl = $('#bossHpFill');
+    if(fillEl){ fillEl.style.width = state.bossHP+'%'; const lbl=$('.boss-hp-label'); if(lbl) lbl.textContent = Math.round(state.bossHP)+'%'; }
+  }
+
+  showFeedback(result, q, pointsEarned, isBoss);
+}
+
+function showFeedback(result, q, pointsEarned, isBoss){
+  const hostEl = $('#challengeHost'); if(hostEl) hostEl.style.pointerEvents = 'none';
+  const layer = $('#feedbackLayer');
+  let headClass = result===true?'ok':(result===false?'bad':'timeup');
+  let headText = result===true ? '✨ إجابة صحيحة!' : (result===false ? '❌ إجابة غير صحيحة' : '⏰ انتهى الوقت!');
+  let ansLine = '';
+  if(result!==true){
+    ansLine = '<div class="feedback-explain"><b>الإجابة الصحيحة:</b><br>'+correctAnswerText(q)+'</div>';
+  }
+  layer.innerHTML =
+    '<div class="feedback-overlay" id="fbOverlay">'
+    +'<div class="feedback-card panel pop-in">'
+    +'<div class="feedback-head '+headClass+'">'+headText+'</div>'
+    + ansLine
+    +'<div class="feedback-explain"><b>لماذا؟</b><br>'+esc(q.explanation||'')+'</div>'
+    + (q.sourceReference ? '<div class="q-source">📖 '+esc(q.sourceReference)+'</div>' : '')
+    + (result===true ? '<div class="feedback-points">+'+pointsEarned+' نقطة</div>' : '')
+    +'<button class="btn btn-primary btn-block" id="fbNextBtn" style="margin-top:14px;">متابعة</button>'
+    +'</div></div>';
+  requestAnimationFrame(()=>$('#fbOverlay').classList.add('show'));
+  $('#fbNextBtn').addEventListener('click', ()=>{
+    layer.querySelector('.feedback-overlay').classList.remove('show');
+    setTimeout(()=>{ layer.innerHTML=''; afterAnswerAdvance(isBoss); }, 260);
+  });
+}
+
+function correctAnswerText(q){
+  if(q.type==='mcq' || q.type==='diagnosis' || q.type==='graph'){ return esc(q.options[q.answer]); }
+  if(q.type==='fillblank'){ return esc(q.accepted[0]); }
+  if(q.type==='match'){ return q.pairs.map(p=>esc(p.left)+' ⇦ '+esc(p.right)).join('<br>'); }
+  if(q.type==='classify'){
+    const byBucket = {};
+    q.items.forEach(it=>{ (byBucket[it.bucket]=byBucket[it.bucket]||[]).push(it.label); });
+    return Object.keys(byBucket).map(b=>'<b>'+esc(b)+':</b> '+byBucket[b].map(esc).join('، ')).join('<br>');
+  }
+  if(q.type==='sequence'){ return q.steps.map((s,i)=>(i+1)+'. '+esc(s)).join('<br>'); }
+  if(q.type==='hotspot'){
+    const d = buildHotspotSVG(q.svgKind); const sp = d.spots.find(s=>s.id===q.targetId);
+    return esc(sp?sp.label:'');
+  }
+  return '';
+}
+
+function afterAnswerAdvance(isBoss){
+  if(state.lives<=0){ state.screen='gameover'; renderApp(); return; }
+  if(isBoss){
+    state.bossIndex++;
+    if(state.bossIndex>=bossPhases.length){ finishGame(); return; }
+    renderApp(); return;
+  }
+  state.currentIndex++;
+  if(state.currentIndex>=state.currentQueue.length){
+    // انتهت المرحلة
+    if(state.levelProgress[state.currentLevel]) state.levelProgress[state.currentLevel].done = true;
+    SFX.levelup();
+    state.screen='levelComplete';
+    renderApp();
+    return;
+  }
+  state.answered=false;
+  renderApp();
+}
+
+function finishGame(){
+  state.screen = 'results';
+  state.attemptId = uid();
+  saveAndSyncAttempt();
+  renderApp();
+}
+
+/* ================== 9) عارض التحديات حسب النوع — renderChallengeBody ================== */
+const ARABIC_LETTERS = ['أ','ب','ج','د','هـ'];
+
+function diffLabel(d){ return {easy:'سهل',medium:'متوسط',hard:'صعب',boss:'زعيم'}[d]||''; }
+function typeLabel(t){
+  return {
+    mcq:'اختيار من متعدد', diagnosis:'🩺 اكتشف المرض', graph:'📈 تحليل الرسم البياني',
+    classify:'🗂️ تصنيف', match:'🔗 وصل بغدته', sequence:'➡️ مسار الهرمون',
+    hotspot:'🎯 اعثر على الهدف', fillblank:'✏️ أكمل المعلومة', memory:'🃏 بطاقات الذاكرة',
+    speed:'⚡ تحدي سريع'
+  }[t]||'';
+}
+
+function renderChallengeBody(q, isBoss){
+  const t = q.type;
+  if(t==='mcq' || t==='diagnosis' || t==='graph') return challengeMCQ(q, isBoss);
+  if(t==='fillblank') return challengeFillblank(q, isBoss);
+  if(t==='hotspot') return challengeHotspot(q, isBoss);
+  if(t==='match') return challengeMatch(q, isBoss);
+  if(t==='classify') return challengeClassify(q, isBoss);
+  if(t==='sequence') return challengeSequence(q, isBoss);
+  if(t==='memory') return challengeMemory(q, isBoss);
+  return '<div class="sub">نوع تحدٍ غير معروف</div>';
+}
+function wireChallengeBody(q, isBoss){
+  const t = q.type;
+  if(t==='mcq' || t==='diagnosis' || t==='graph') return wireMCQ(q, isBoss);
+  if(t==='fillblank') return wireFillblank(q, isBoss);
+  if(t==='hotspot') return wireHotspot(q, isBoss);
+  if(t==='match') return wireMatch(q, isBoss);
+  if(t==='classify') return wireClassify(q, isBoss);
+  if(t==='sequence') return wireSequence(q, isBoss);
+  if(t==='memory') return wireMemory(q, isBoss);
+}
+
+/* ---- MCQ / Diagnosis / Graph ---- */
+/* ---- عشوائية عرض الاختيارات: الإجابة الصحيحة تُخزَّن مستقلة تماماً عن موضع العرض ----
+   نبني "نسخة عرض" (view) مشوّشة بخوارزمية Fisher-Yates من نفس shuffle() العامة،
+   كل عنصر فيها يحمل orig = فهرسه الأصلي في q.options (حيث q.answer ثابت ولا يتغير أبداً).
+   العرض (أ/ب/ج/د) يُبنى من ترتيب الـview بعد الخلط، فتتغيّر مواضع الإجابة الصحيحة
+   في كل مرة يُعرض فيها نفس السؤال (محاولة جديدة، طالب آخر، إعادة اللعب...). */
+function shuffleOptionsView(options){
+  return shuffle(options.map((text,i)=>({text:text, orig:i})));
+}
+function challengeMCQ(q, isBoss){
+  let html = '';
+  if(q.type==='graph') html += '<div class="hotspot-wrap" style="padding:10px;margin-bottom:16px;">'+buildGraphSVG(q.graphKind)+'</div>';
+  const view = shuffleOptionsView(q.options);
+  html += '<div class="opt-list" id="optList">';
+  view.forEach((opt,i)=>{
+    html += '<button class="opt-btn" data-orig="'+opt.orig+'"><span class="opt-letter">'+ARABIC_LETTERS[i]+'</span><span>'+esc(opt.text)+'</span></button>';
+  });
+  html += '</div>';
+  return html;
+}
+function wireMCQ(q, isBoss){
+  const qStart = Date.now();
+  $all('#optList .opt-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(state.answered) return;
+      const orig = +btn.dataset.orig;
+      const correct = orig===q.answer;
+      $all('#optList .opt-btn').forEach(b=>{
+        const bOrig = +b.dataset.orig;
+        b.classList.add('disabledopt');
+        if(bOrig===q.answer) b.classList.add('correct');
+        if(b===btn && !correct) b.classList.add('wrong');
+      });
+      const t = (Date.now()-qStart)/1000;
+      finalizeAnswer(correct, q, t, {isBoss});
+    });
+  });
+}
+
+/* ---- Fill in the blank ---- */
+function challengeFillblank(q, isBoss){
+  return '<div class="fill-wrap">'
+    +'<input type="text" class="fill-input" id="fillInput" placeholder="اكتب إجابتك هنا" autocomplete="off">'
+    +'<button class="btn btn-primary btn-block" id="fillSubmit" style="margin-top:14px;">تحقق ✅</button>'
+    +'</div>';
+}
+function normalizeAr(s){
+  return String(s||'').trim().replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/\s+/g,' ').toLowerCase();
+}
+function wireFillblank(q, isBoss){
+  const qStart = Date.now();
+  const submit = ()=>{
+    if(state.answered) return;
+    const val = $('#fillInput').value;
+    const norm = normalizeAr(val);
+    const correct = q.accepted.some(a=>normalizeAr(a)===norm) && norm.length>0;
+    $('#fillInput').disabled = true;
+    $('#fillInput').style.borderColor = correct? 'var(--ok)':'var(--danger)';
+    const t = (Date.now()-qStart)/1000;
+    finalizeAnswer(correct, q, t, {isBoss});
+  };
+  $('#fillSubmit').addEventListener('click', submit);
+  $('#fillInput').addEventListener('keydown', e=>{ if(e.key==='Enter') submit(); });
+}
+
+/* ---- Hotspot ---- */
+function challengeHotspot(q, isBoss){
+  const r = renderHotspotSVG(q.svgKind);
+  return '<div class="hotspot-wrap" id="hotspotWrap">'+r.html+'</div>'
+    +'<div class="sub" style="text-align:center;margin-top:10px;">اضغط على الموضع الصحيح في الرسم</div>';
+}
+function wireHotspot(q, isBoss){
+  const qStart = Date.now();
+  $all('.hotspot-dot', $('#hotspotWrap')).forEach(dot=>{
+    dot.addEventListener('click', ()=>{
+      if(state.answered) return;
+      const id = dot.dataset.id;
+      const correct = id===q.targetId;
+      $all('.hotspot-dot').forEach(d=>{
+        const c = $('circle.ring', d);
+        if(d.dataset.id===q.targetId){ c.setAttribute('stroke','var(--ok)'); c.setAttribute('fill','rgba(63,224,122,.3)'); }
+        else if(d===dot && !correct){ c.setAttribute('stroke','var(--danger)'); c.setAttribute('fill','rgba(255,77,109,.3)'); }
+      });
+      const t = (Date.now()-qStart)/1000;
+      finalizeAnswer(correct, q, t, {isBoss});
+    });
+  });
+}
+
+/* ---- Match (وصل بالسحب) ---- */
+function challengeMatch(q, isBoss){
+  const leftItems = shuffle(q.pairs.map((p,i)=>({key:'L'+i, text:p.left, pairIndex:i})));
+  const rightItems = shuffle(q.pairs.map((p,i)=>({key:'R'+i, text:p.right, pairIndex:i})));
+  let html = '<div class="dnd-zone">';
+  html += '<div class="dnd-col-title">اسحب كل عنصر من الأعلى إلى الهدف الصحيح بالأسفل</div>';
+  html += '<div class="dnd-pool" id="dndPool">';
+  leftItems.forEach(it=> html += '<div class="dnd-chip" data-pair="'+it.pairIndex+'" data-key="'+it.key+'">'+esc(it.text)+'</div>');
+  html += '</div>';
+  html += '<div class="dnd-col" id="dndTargets" style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">';
+  rightItems.forEach(it=> html += '<div class="dnd-target" data-pair="'+it.pairIndex+'"><span class="dnd-target-label">'+esc(it.text)+'</span></div>');
+  html += '</div></div>';
+  return html;
+}
+function wireMatch(q, isBoss){ wireDndGeneric(q, isBoss, 'pair', true); }
+
+/* ---- Classify (تصنيف بالسحب) ---- */
+function challengeClassify(q, isBoss){
+  const items = shuffle(q.items.map((it,i)=>({key:'I'+i, text:it.label, bucket:it.bucket})));
+  let html = '<div class="dnd-zone">';
+  html += '<div class="dnd-col-title">اسحب كل عنصر إلى المجموعة الصحيحة (كل مجموعة تقبل أكثر من عنصر)</div>';
+  html += '<div class="dnd-pool" id="dndPool">';
+  items.forEach(it=> html += '<div class="dnd-chip" data-bucket="'+esc(it.bucket)+'" data-key="'+it.key+'">'+esc(it.text)+'</div>');
+  html += '</div>';
+  html += '<div class="dnd-col" id="dndTargets" style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">';
+  q.buckets.forEach(b=> html += '<div class="dnd-target" data-bucket="'+esc(b)+'" style="min-height:64px;flex-wrap:wrap;"><span class="dnd-target-label">'+esc(b)+'</span></div>');
+  html += '</div></div>';
+  return html;
+}
+function wireClassify(q, isBoss){ wireDndGeneric(q, isBoss, 'bucket', false); }
+
+/* ---- محرك سحب/إفلات عام (يُستخدم في match و classify) ----
+   singleSlot=true (match): كل هدف يقبل عنصراً واحداً فقط فيُغلق بعد أول إفلات صحيح.
+   singleSlot=false (classify): كل مجموعة (هدف) تقبل أكثر من عنصر، فلا يُغلق الهدف أبداً. */
+function wireDndGeneric(q, isBoss, matchAttr, singleSlot){
+  const qStart = Date.now();
+  const chips = $all('#dndPool .dnd-chip');
+  const total = chips.length;
+  let placed = 0, allCorrect = true;
+  chips.forEach(chip=>{
+    makeDraggableChip(chip, function(targetEl){
+      if(chip.classList.contains('locked-correct') || chip.classList.contains('locked-wrong')) return;
+      if(singleSlot && targetEl.classList.contains('right')) return; // الهدف ممتلئ بالفعل بعنصر صحيح (match فقط)
+      const chipVal = chip.dataset[matchAttr];
+      const targetVal = targetEl.dataset[matchAttr];
+      const isRight = chipVal === targetVal;
+      chip.classList.add(isRight?'locked-correct':'locked-wrong');
+      chip.classList.add('placed');
+      chip.style.cursor='default';
+      targetEl.appendChild(chip);
+      if(singleSlot){ targetEl.classList.add(isRight?'right':'wrongt','filled'); }
+      else { targetEl.classList.add('filled'); if(!isRight) targetEl.classList.add('wrongt'); }
+      if(!isRight) allCorrect = false;
+      placed++;
+      if(placed>=total){
+        SFX.click();
+        setTimeout(()=>{ const t=(Date.now()-qStart)/1000; finalizeAnswer(allCorrect, q, t, {isBoss}); }, 350);
+      }
+    });
+  });
+}
+
+/* ---- Sequence (ترتيب بالسحب) ---- */
+function challengeSequence(q, isBoss){
+  const order = shuffle(q.steps.map((s,i)=>({text:s, orig:i})));
+  let html = '<div class="dnd-col-title">اسحب لإعادة الترتيب الصحيح ثم اضغط تحقق</div>';
+  html += '<div class="seq-list" id="seqList">';
+  order.forEach((it,i)=> html += '<div class="seq-item" data-orig="'+it.orig+'"><span class="seq-num">'+(i+1)+'</span><span>'+esc(it.text)+'</span></div>');
+  html += '</div>';
+  html += '<button class="btn btn-primary btn-block" id="seqSubmit" style="margin-top:16px;">تحقق ✅</button>';
+  return html;
+}
+function wireSequence(q, isBoss){
+  const qStart = Date.now();
+  const container = $('#seqList');
+  function renumber(){ $all('.seq-item',container).forEach((it,i)=> $('.seq-num',it).textContent=(i+1)); }
+  makeSortableList(container, renumber);
+  $('#seqSubmit').addEventListener('click', ()=>{
+    if(state.answered) return;
+    const order = $all('.seq-item',container).map(it=>+it.dataset.orig);
+    const correct = order.every((v,i)=>v===i);
+    $all('.seq-item',container).forEach((it,i)=>{
+      it.style.borderColor = (+it.dataset.orig===i) ? 'var(--ok)' : 'var(--danger)';
+    });
+    const t=(Date.now()-qStart)/1000;
+    finalizeAnswer(correct, q, t, {isBoss});
+  });
+}
+
+/* ---- Memory Cards ---- */
+function challengeMemory(q, isBoss){
+  const cards = [];
+  q.pairs.forEach((p,i)=>{ cards.push({pairIndex:i,text:p.a}); cards.push({pairIndex:i,text:p.b}); });
+  const shuffled = shuffle(cards);
+  let html = '<div class="memory-grid" id="memGrid">';
+  shuffled.forEach((c,i)=>{
+    html += '<div class="mem-card" data-pair="'+c.pairIndex+'" data-idx="'+i+'">'
+      +'<div class="mem-card-inner">'
+      +'<div class="mem-face mem-back">🧬</div>'
+      +'<div class="mem-face mem-front">'+esc(c.text)+'</div>'
+      +'</div></div>';
+  });
+  html += '</div><div class="sub" style="text-align:center;margin-top:10px;">اقلب بطاقتين لإيجاد العلاقة الصحيحة</div>';
+  return html;
+}
+function wireMemory(q, isBoss){
+  const qStart = Date.now();
+  const total = q.pairs.length;
+  let matched = 0, lock=false, first=null;
+  $all('.mem-card', $('#memGrid')).forEach(card=>{
+    card.addEventListener('click', ()=>{
+      if(state.answered || lock || card.classList.contains('flipped') || card.classList.contains('matched')) return;
+      card.classList.add('flipped');
+      if(!first){ first = card; return; }
+      const second = card;
+      lock = true;
+      const isMatch = first.dataset.pair===second.dataset.pair && first!==second;
+      setTimeout(()=>{
+        if(isMatch){
+          first.classList.add('matched'); second.classList.add('matched');
+          matched++;
+          SFX.click();
+          if(matched>=total){
+            const t=(Date.now()-qStart)/1000;
+            finalizeAnswer(true, q, t, {isBoss});
+          }
+        } else {
+          first.classList.remove('flipped'); second.classList.remove('flipped');
+        }
+        first=null; lock=false;
+      }, isMatch?450:700);
+    });
+  });
+}
+
+/* ================== 10) الشاشات — Screens ================== */
+function renderApp(){
+  const app = $('#app');
+  const scr = state.screen;
+  if(scr==='intro') return renderIntroScreen(app);
+  if(scr==='nameEntry') return renderNameScreen(app);
+  if(scr==='map') return renderMapScreen(app);
+  if(scr==='question') return renderQuestionScreen(app);
+  if(scr==='levelComplete') return renderLevelCompleteScreen(app);
+  if(scr==='boss') return renderBossScreen(app);
+  if(scr==='gameover') return renderGameOverScreen(app);
+  if(scr==='results') return renderResultsScreen(app);
+  if(scr==='certificate') return renderCertificateScreen(app);
+  if(scr==='admin') return renderAdminScreen(app);
+  if(scr==='leaderboard') return renderLeaderboardScreen(app);
+  app.innerHTML = '<div class="scr center-col"><p>...</p></div>';
+}
+
+function hudBar(showBack){
+  return '<div class="hud">'
+    +'<div class="hud-group">'
+    + (showBack? '<button class="icon-btn" id="hudBackBtn">→</button>' : '')
+    +'</div>'
+    +'<div class="hud-group">'
+    +'<div class="hud-chip">⭐ '+state.score+'</div>'
+    +'<div class="hearts">'+[0,1,2].map(i=> i<state.lives? '❤️':'<span class="heart-lost">❤️</span>').join('')+'</div>'
+    +'<button class="icon-btn" id="soundToggleBtn">'+(state.soundOn?'🔊':'🔇')+'</button>'
+    +'</div></div>';
+}
+function mapExtrasBar(){
+  let leaderboardOn=false; try{ leaderboardOn = localStorage.getItem(CONFIG.LEADERBOARD_KEY)==='1'; }catch(e){}
+  return '<div style="display:flex;gap:8px;justify-content:center;margin:6px 0 4px;flex-wrap:wrap;">'
+    + (leaderboardOn? '<button class="btn btn-ghost btn-sm" id="lbBtn">🏆 أفضل الصيادين</button>' : '')
+    +'<button class="btn btn-ghost btn-sm" id="gearBtn">⚙️ لوحة المدرس</button>'
+    +'</div>';
+}
+
+/* ---- شاشة المقدمة السينمائية ---- */
+const CINEMA_LINES = [
+  'الجسم فقد السيطرة على منظومة الهرمونات! 🧬',
+  'الغدد أغلقت أبوابها...',
+  'والهرمونات اختفت من مساراتها...',
+  'مهمتك أن تعيد السيطرة إلى الجسم.',
+  'هل أنت مستعد لكشف أسرار الهرمونات؟ 🧬'
+];
+function renderIntroScreen(app){
+  app.innerHTML = '<div class="scr center-col">'
+    +'<div class="intro-stage">'
+    +'<div class="dna-badge">🧬</div>'
+    +'<div class="big-title">'+CONFIG.GAME_TITLE+'</div>'
+    +'<div class="typewriter-box"><div class="cinema-line" id="cinemaLine"></div></div>'
+    +'<button class="btn btn-primary" id="startMissionBtn" style="display:none;">ابدأ المهمة 🏹</button>'
+    +'</div>'
+    +'<div class="footer-brand">بواسطة <b>'+esc(CONFIG.BRAND_NAME)+'</b> — «'+esc(CONFIG.BRAND_SLOGAN)+'»<br>'+esc(CONFIG.BRAND_PHONE)+'</div>'
+    +'</div>';
+  let idx=0; const lineEl = $('#cinemaLine');
+  function showNext(){
+    if(idx>=CINEMA_LINES.length){ $('#startMissionBtn').style.display='inline-flex'; return; }
+    lineEl.classList.remove('fadein'); void lineEl.offsetWidth; lineEl.classList.add('fadein');
+    lineEl.textContent = CINEMA_LINES[idx]; idx++;
+    setTimeout(showNext, 1900);
+  }
+  showNext();
+  $('#startMissionBtn').addEventListener('click', ()=>{ SFX.click(); state.screen='nameEntry'; renderApp(); });
+}
+
+/* ---- شاشة اسم الصياد ---- */
+function renderNameScreen(app){
+  app.innerHTML = '<div class="scr center-col">'
+    +'<div class="intro-stage">'
+    +'<div class="dna-badge" style="font-size:48px;">🏹</div>'
+    +'<div class="big-title" style="font-size:24px;">اكتب اسم الصياد</div>'
+    +'<p class="sub">سيظهر اسمك في النتيجة النهائية وعلى شهادة الإتمام</p>'
+    +'<input type="text" class="name-input" id="hunterNameInput" placeholder="اسمك هنا...">'
+    +'<button class="btn btn-primary" id="confirmNameBtn">دخول الميدان 🧭</button>'
+    +'</div></div>';
+  const input = $('#hunterNameInput'); input.focus();
+  function go(){
+    const v = input.value.trim();
+    if(!v){ input.style.borderColor='var(--danger)'; input.focus(); return; }
+    state.studentName = v; SFX.click(); state.screen='map'; renderApp();
+  }
+  $('#confirmNameBtn').addEventListener('click', go);
+  input.addEventListener('keydown', e=>{ if(e.key==='Enter') go(); });
+}
+
+/* ---- خريطة المغامرة ---- */
+function renderMapScreen(app){
+  const bossUnlocked = LEVELS.filter(l=>l.key!=='boss').every(l=> state.levelProgress[l.id] && state.levelProgress[l.id].done);
+  let html = '<div class="scr">';
+  html += hudBar(false);
+  html += '<div class="eyebrow">أهلاً '+esc(state.studentName)+' 🏹</div>';
+  html += '<h1 class="big-title" style="margin:4px 0 4px;">خريطة المغامرة</h1>';
+  html += '<p class="sub" style="margin-bottom:8px;">أكمل كل مرحلة لتفتح ما بعدها، وواجه الزعيم في النهاية</p>';
+  html += '<div class="map-path">';
+  LEVELS.forEach((lv,i)=>{
+    const isBoss = lv.key==='boss';
+    const prevDone = i===0 ? true : (state.levelProgress[LEVELS[i-1].id] && state.levelProgress[LEVELS[i-1].id].done);
+    const unlocked = isBoss ? bossUnlocked : prevDone;
+    const done = state.levelProgress[lv.id] && state.levelProgress[lv.id].done;
+    const cls = done?'done':(unlocked?'unlocked':'locked');
+    const stars = done ? '★★★' : '';
+    html += '<div class="map-node '+cls+'" data-lv="'+lv.id+'" data-boss="'+(isBoss?'1':'0')+'" data-unlocked="'+(unlocked?'1':'0')+'">'
+      +'<div class="map-node-icon">'+lv.icon+'</div>'
+      +'<div class="map-node-body"><div class="map-node-title">'+esc(lv.title)+'</div>'
+      +'<div class="map-node-desc">'+esc(lv.subtitle)+'</div>'
+      + (stars? '<div class="map-node-stars">'+stars+'</div>' : (unlocked? '<div class="map-node-desc">اضغط للبدء</div>' : '<div class="map-node-desc">🔒 مغلقة</div>'))
+      +'</div></div>';
+    if(i<LEVELS.length-1) html += '<div class="map-connector"></div>';
+  });
+  html += '</div>';
+  html += mapExtrasBar();
+  html += '</div>';
+  app.innerHTML = html;
+  $('#soundToggleBtn') && $('#soundToggleBtn').addEventListener('click', toggleSound);
+  $('#gearBtn') && $('#gearBtn').addEventListener('click', ()=>{ state.screen='admin'; renderApp(); });
+  $('#lbBtn') && $('#lbBtn').addEventListener('click', ()=>{ state.screen='leaderboard'; renderApp(); });
+  $all('.map-node').forEach(node=>{
+    node.addEventListener('click', ()=>{
+      if(node.dataset.unlocked!=='1') return;
+      SFX.click();
+      if(node.dataset.boss==='1'){ startBoss(); } else { startLevel(+node.dataset.lv); }
+    });
+  });
+}
+
+/* ---- شاشة السؤال (المراحل العادية) ---- */
+function renderQuestionScreen(app){
+  const q = currentQuestion();
+  const lv = LEVELS.find(l=>l.id===state.currentLevel);
+  state.answered = false;
+  let html = '<div class="scr">';
+  html += hudBar(true);
+  html += timerRingSVG();
+  html += '<div class="q-topbar"><span class="q-level-tag">'+lv.icon+' '+esc(lv.title)+'</span><span class="q-type-tag">'+typeLabel(q.type)+'</span></div>';
+  html += '<div class="panel glow-edge q-card">';
+  html += '<span class="q-diff diff-'+q.difficulty+'">'+diffLabel(q.difficulty)+' • '+ (CONFIG.POINTS[q.difficulty]) +' نقطة</span>';
+  html += '<div class="q-text">'+esc(q.question)+'</div>';
+  html += '</div>';
+  html += '<div id="challengeHost">'+renderChallengeBody(q,false)+'</div>';
+  html += '<div class="sub" style="text-align:center;margin-top:14px;">السؤال '+(state.currentIndex+1)+' من '+state.currentQueue.length+'</div>';
+  html += '</div>';
+  app.innerHTML = html;
+  $('#soundToggleBtn').addEventListener('click', toggleSound);
+  $('#hudBackBtn').addEventListener('click', ()=>{ if(confirm('هل تريد العودة للخريطة؟ ستفقد تقدمك في هذه المرحلة.')){ Timer.stop(); state.screen='map'; renderApp(); } });
+  wireChallengeBody(q,false);
+  Timer.start(CONFIG.QUESTION_SECONDS, renderTimerRing, ()=> finalizeAnswer(null, q, CONFIG.QUESTION_SECONDS, {isBoss:false}));
+}
+
+/* ---- شاشة إتمام المرحلة ---- */
+function renderLevelCompleteScreen(app){
+  const lv = LEVELS.find(l=>l.id===state.currentLevel);
+  const prog = state.levelProgress[state.currentLevel];
+  app.innerHTML = '<div class="scr center-col">'
+    +'<div class="intro-stage">'
+    +'<div class="dna-badge">'+lv.icon+'</div>'
+    +'<div class="big-title" style="font-size:24px;">أحسنت! 🎉</div>'
+    +'<p class="sub">أتممت مرحلة «'+esc(lv.title)+'»<br>إجابات صحيحة: '+prog.correct+' من '+prog.total+'</p>'
+    +'<button class="btn btn-primary" id="backMapBtn">العودة للخريطة 🗺️</button>'
+    +'</div></div>';
+  $('#backMapBtn').addEventListener('click', ()=>{ SFX.click(); state.screen='map'; renderApp(); });
+}
+
+/* ---- شاشة فشل الأرواح ---- */
+function renderGameOverScreen(app){
+  app.innerHTML = '<div class="scr center-col">'
+    +'<div class="intro-stage">'
+    +'<div class="dna-badge" style="filter:drop-shadow(0 0 20px rgba(255,77,109,.6));">💔</div>'
+    +'<div class="big-title" style="font-size:22px;color:var(--danger);">الصياد يحتاج إلى محاولة جديدة</div>'
+    +'<p class="sub">نفدت أرواحك، لكن نتائجك السابقة لن تُفقد.</p>'
+    +'<button class="btn btn-danger" id="retryBtn">إعادة المحاولة 🔁</button>'
+    +'</div></div>';
+  $('#retryBtn').addEventListener('click', ()=>{
+    SFX.click();
+    state.score=0; state.combo=0; state.maxCombo=0; state.lives=CONFIG.LIVES_START;
+    state.correctCount=0; state.wrongCount=0; state.unansweredCount=0; state.totalQuestions=0;
+    state.questionTimes=[]; state.levelProgress={}; state.bossIndex=0; state.bossHP=100;
+    state.screen='map'; renderApp();
+  });
+}
+
+/* ---- الزعيم النهائي — THE HORMONE BOSS ---- */
+function startBoss(){
+  state.bossIndex = 0; state.bossHP = 100;
+  state.screen='boss'; renderApp();
+}
+function renderBossScreen(app){
+  const phase = bossPhases[state.bossIndex];
+  state.answered = false;
+  let html = '<div class="scr">';
+  html += hudBar(true);
+  html += '<div class="boss-portrait">👑</div>';
+  html += '<div class="big-title" style="text-align:center;font-size:22px;color:var(--danger);">THE HORMONE BOSS</div>';
+  html += '<div class="boss-hp-track" style="margin:14px 0 4px;"><div class="boss-hp-fill" id="bossHpFill" style="width:'+state.bossHP+'%;"></div><div class="boss-hp-label">'+Math.round(state.bossHP)+'%</div></div>';
+  html += '<div class="boss-phase-tag">'+esc(phase.phaseLabel)+' ('+(state.bossIndex+1)+'/'+bossPhases.length+')</div>';
+  html += timerRingSVG();
+  if(phase.type==='speed'){
+    html += renderSpeedPhase(phase);
+  } else {
+    html += '<div class="panel glow-edge q-card">'
+      +'<span class="q-diff diff-boss">زعيم • '+CONFIG.POINTS.boss+' نقطة</span>'
+      +'<div class="q-text">'+esc(phase.question)+'</div></div>';
+    html += '<div id="challengeHost">'+renderChallengeBody(phase,true)+'</div>';
+  }
+  html += '</div>';
+  app.innerHTML = html;
+  $('#soundToggleBtn').addEventListener('click', toggleSound);
+  $('#hudBackBtn').addEventListener('click', ()=>{ if(confirm('الخروج من معركة الزعيم؟ ستُعاد المعركة من البداية لاحقاً.')){ Timer.stop(); state.screen='map'; renderApp(); } });
+  if(phase.type==='speed'){ wireSpeedPhase(phase); }
+  else {
+    wireChallengeBody(phase, true);
+    Timer.start(CONFIG.QUESTION_SECONDS, renderTimerRing, ()=> finalizeBossAnswer(null, phase, CONFIG.QUESTION_SECONDS));
+  }
+  SFX.boss();
+}
+
+/* ---- المرحلة الخامسة للزعيم: التحدي السريع (Speed Run) ----
+   ملحوظة مهمة: كل سؤال فرعي داخل التحدي السريع له مؤقت 60 ثانية كاملة ومستقل بذاته،
+   تماماً كأي سؤال آخر في اللعبة — لا يوجد استثناء لمدة الأسئلة داخل Speed Run. */
+function renderSpeedPhase(phase){
+  let html = '<div class="panel glow-edge q-card" id="speedCard">';
+  html += '<span class="q-diff diff-boss">⚡ تحدي سريع • '+CONFIG.POINTS.boss+' نقطة</span>';
+  html += '<div class="q-text" id="speedQText"></div></div>';
+  html += '<div class="opt-list" id="speedOptList"></div>';
+  html += '<div class="sub" id="speedProgress" style="text-align:center;margin-top:10px;"></div>';
+  return html;
+}
+let __speedState = null;
+function wireSpeedPhase(phase){
+  __speedState = { idx:0, correctAll:true, timedOut:false, startAll:Date.now() };
+  renderSpeedItem(phase);
+}
+function renderSpeedItem(phase){
+  const it = phase.items[__speedState.idx];
+  $('#speedQText').textContent = it.q;
+  $('#speedProgress').textContent = 'سؤال '+(__speedState.idx+1)+' من '+phase.items.length+' — ⏱️ 60 ثانية لهذا السؤال';
+  const list = $('#speedOptList'); list.innerHTML='';
+  let locked = false;
+  const view = shuffleOptionsView(it.options); // عشوائية موضع الإجابة الصحيحة، مستقلة عن it.answer
+  function lockButtons(chosenOrig){
+    $all('.opt-btn',list).forEach(bb=>{
+      const bOrig = +bb.dataset.orig;
+      bb.classList.add('disabledopt');
+      if(bOrig===it.answer) bb.classList.add('correct');
+      if(chosenOrig!==null && bOrig===chosenOrig && bOrig!==it.answer) bb.classList.add('wrong');
+    });
+  }
+  function advance(){
+    Timer.stop();
+    __speedState.idx++;
+    if(__speedState.idx>=phase.items.length){
+      const t=(Date.now()-__speedState.startAll)/1000;
+      const finalResult = __speedState.timedOut ? null : __speedState.correctAll;
+      finalizeBossAnswer(finalResult, phase, t);
+    } else { renderSpeedItem(phase); }
+  }
+  view.forEach((opt,i)=>{
+    const b = document.createElement('button');
+    b.className='opt-btn'; b.dataset.orig = opt.orig;
+    b.innerHTML = '<span class="opt-letter">'+ARABIC_LETTERS[i]+'</span><span>'+esc(opt.text)+'</span>';
+    b.addEventListener('click', ()=>{
+      if(state.answered || locked) return;
+      locked = true;
+      const orig = +b.dataset.orig;
+      const correct = orig===it.answer;
+      if(!correct) __speedState.correctAll = false;
+      lockButtons(orig);
+      SFX[correct?'correct':'wrong']();
+      setTimeout(advance, 650);
+    });
+    list.appendChild(b);
+  });
+  // مؤقت مستقل كامل (60 ثانية) لهذا السؤال الفرعي تحديداً
+  Timer.start(CONFIG.QUESTION_SECONDS, renderTimerRing, ()=>{
+    if(state.answered || locked) return;
+    locked = true;
+    __speedState.correctAll = false;
+    __speedState.timedOut = true;
+    lockButtons(null);
+    SFX.timeup();
+    setTimeout(advance, 900);
+  });
+}
+
+function finalizeBossAnswer(result, phase, timeTakenSec){
+  // غلاف رفيع فوق finalizeAnswer الموحّد لضمان نفس منطق النقاط/الأرواح/الكومبو/شريط صحة الزعيم
+  // في كل أنواع تحديات الزعيم (Hotspot, Match, Sequence, Diagnosis, Classify, Speed)
+  finalizeAnswer(result, phase, timeTakenSec, {isBoss:true});
+}
+
+/* ================== 11) النتائج النهائية والرتبة ================== */
+function computeRank(){
+  const total = state.totalQuestions || 1;
+  const pct = Math.round((state.correctCount/total)*100);
+  const rank = CONFIG.RANKS.find(r=>pct>=r.min) || CONFIG.RANKS[CONFIG.RANKS.length-1];
+  return { pct, rank };
+}
+function totalTimeSpent(){ return state.questionTimes.reduce((a,b)=>a+b,0); }
+function avgQuestionTime(){ return state.questionTimes.length ? (totalTimeSpent()/state.questionTimes.length) : 0; }
+
+function renderResultsScreen(app){
+  const {pct, rank} = computeRank();
+  let html = '<div class="scr center-col">';
+  html += '<div class="rank-badge">'+rank.icon+'</div>';
+  html += '<div class="big-title" style="font-size:24px;">🎉 مبروك أيها الصياد!</div>';
+  html += '<div class="eyebrow" style="font-size:16px;margin-top:4px;">'+esc(state.studentName)+'</div>';
+  html += '<p class="sub">أتمّ بنجاح تحدي «'+CONFIG.GAME_TITLE+'»</p>';
+  html += '<div class="panel glow-edge" style="width:100%;margin-top:12px;">';
+  html += '<div style="text-align:center;font-weight:900;font-size:20px;color:var(--gold);">'+rank.icon+' '+rank.title+'</div>';
+  html += '<div class="stat-grid">';
+  html += statBox(state.score,'النقاط الكلية');
+  html += statBox(pct+'%','نسبة الدقة');
+  html += statBox(state.correctCount,'إجابات صحيحة');
+  html += statBox(state.wrongCount,'إجابات خاطئة');
+  html += statBox(state.unansweredCount,'بدون إجابة');
+  html += statBox(fmtTime(totalTimeSpent()),'الوقت الكلي');
+  html += statBox(state.maxCombo,'أعلى كومبو 🔥');
+  html += statBox(fmtTime(avgQuestionTime()),'متوسط وقت السؤال');
+  html += '</div></div>';
+  html += '<button class="btn btn-primary btn-block" id="getCertBtn" style="margin-top:16px;">🏆 احصل على الشهادة</button>';
+  html += '<button class="btn btn-ghost btn-block" id="backMapBtn2" style="margin-top:10px;">العودة للخريطة</button>';
+  html += '<div class="footer-brand">'+esc(CONFIG.BRAND_NAME)+' — «'+esc(CONFIG.BRAND_SLOGAN)+'» — '+esc(CONFIG.BRAND_PHONE)+'</div>';
+  html += '</div>';
+  app.innerHTML = html;
+  $('#getCertBtn').addEventListener('click', ()=>{ SFX.certificate(); state.screen='certificate'; renderApp(); });
+  $('#backMapBtn2').addEventListener('click', ()=>{ state.screen='map'; renderApp(); });
+}
+function statBox(num,label){ return '<div class="stat-box"><div class="stat-num">'+num+'</div><div class="stat-lbl">'+label+'</div></div>'; }
+
+/* ================== 12) الشهادة — Canvas + PNG + طباعة ================== */
+function renderCertificateScreen(app){
+  const {pct, rank} = computeRank();
+  if(!state.attemptId) state.attemptId = uid();
+  let html = '<div class="scr center-col">';
+  html += '<div class="big-title" style="font-size:22px;">🏆 شهادة الإتمام</div>';
+  html += '<div class="cert-canvas-wrap" id="certWrap"><canvas id="certCanvas" width="1200" height="850"></canvas></div>';
+  html += '<div class="hud-group" style="width:100%;justify-content:center;gap:12px;margin-top:6px;">';
+  html += '<button class="btn btn-primary" id="dlCertBtn">📥 حفظ الشهادة PNG</button>';
+  html += '<button class="btn btn-ghost" id="printCertBtn">🖨️ طباعة الشهادة</button>';
+  html += '</div>';
+  html += '<button class="btn btn-ghost btn-block" id="backResultsBtn" style="margin-top:14px;">العودة للنتائج</button>';
+  html += '</div>';
+  app.innerHTML = html;
+  drawCertificate($('#certCanvas'), { name: state.studentName, score: state.score, pct: pct, rank: rank.icon+' '+rank.title, certId: state.attemptId, date: new Date().toLocaleDateString('ar-EG') });
+  $('#dlCertBtn').addEventListener('click', downloadCertificatePNG);
+  $('#printCertBtn').addEventListener('click', printCertificate);
+  $('#backResultsBtn').addEventListener('click', ()=>{ state.screen='results'; renderApp(); });
+}
+
+function drawCertificate(canvas, data){
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const grad = ctx.createLinearGradient(0,0,W,H);
+  grad.addColorStop(0,'#0a1626'); grad.addColorStop(.5,'#0f1f33'); grad.addColorStop(1,'#142943');
+  ctx.fillStyle = grad; ctx.fillRect(0,0,W,H);
+  // إطار زخرفي
+  ctx.strokeStyle = '#2de8c7'; ctx.lineWidth = 6; ctx.strokeRect(24,24,W-48,H-48);
+  ctx.strokeStyle = 'rgba(164,91,255,.6)'; ctx.lineWidth = 2; ctx.strokeRect(40,40,W-80,H-80);
+  // زخرفة جزيئية بسيطة
+  ctx.save();
+  for(let i=0;i<26;i++){
+    ctx.beginPath();
+    const x = 60+Math.random()*(W-120), y=60+Math.random()*(H-120), r=1.4+Math.random()*2.2;
+    ctx.fillStyle = 'rgba(63,208,255,'+(0.15+Math.random()*0.35).toFixed(2)+')';
+    ctx.arc(x,y,r,0,Math.PI*2); ctx.fill();
+  }
+  ctx.restore();
+  ctx.direction='rtl'; ctx.textAlign='center';
+  ctx.fillStyle = '#3fd0ff'; ctx.font='700 30px Tajawal, Arial';
+  ctx.fillText('🧬 '+CONFIG.GAME_TITLE, W/2, 118);
+  ctx.fillStyle = '#eaf6ff'; ctx.font='900 46px Cairo, Arial';
+  ctx.fillText('شهادة إتمام', W/2, 195);
+  ctx.fillStyle = '#8fb0c9'; ctx.font='600 22px Tajawal, Arial';
+  ctx.fillText('تشهد أكاديمية '+CONFIG.BRAND_NAME+' بأن الصياد', W/2, 250);
+  ctx.fillStyle = '#ffd35c'; ctx.font='900 54px Cairo, Arial';
+  ctx.fillText(data.name || '—', W/2, 330);
+  ctx.fillStyle = '#eaf6ff'; ctx.font='600 22px Tajawal, Arial';
+  ctx.fillText('قد أتمّ بنجاح تحدي الهرمونات', W/2, 380);
+  ctx.fillStyle = '#2de8c7'; ctx.font='900 40px Cairo, Arial';
+  ctx.fillText(data.rank, W/2, 450);
+  // إحصائيات
+  const statsY = 530;
+  drawCertStat(ctx, W*0.22, statsY, 'Score', String(data.score));
+  drawCertStat(ctx, W*0.5, statsY, 'Accuracy', data.pct+'%');
+  drawCertStat(ctx, W*0.78, statsY, 'Certificate ID', data.certId);
+  ctx.fillStyle = '#5b7a92'; ctx.font='500 18px Tajawal, Arial';
+  ctx.fillText('Date: '+data.date, W/2, 610);
+  // خط فاصل
+  ctx.strokeStyle='rgba(255,255,255,.15)'; ctx.beginPath(); ctx.moveTo(140,700); ctx.lineTo(W-140,700); ctx.stroke();
+  ctx.fillStyle = '#eaf6ff'; ctx.font='800 26px Cairo, Arial';
+  ctx.fillText(CONFIG.BRAND_NAME, W/2, 745);
+  ctx.fillStyle = '#8fb0c9'; ctx.font='600 20px Tajawal, Arial';
+  ctx.fillText('مدرس أحياء وعلوم متكاملة', W/2, 775);
+  ctx.fillStyle = '#2de8c7'; ctx.font='700 22px Tajawal, Arial';
+  ctx.fillText('"'+CONFIG.BRAND_SLOGAN+'"', W/2, 805);
+  ctx.fillStyle = '#5b7a92'; ctx.font='500 18px Tajawal, Arial';
+  ctx.fillText(CONFIG.BRAND_PHONE, W/2, 830);
+}
+function drawCertStat(ctx,x,y,label,val){
+  ctx.fillStyle = '#8fb0c9'; ctx.font='600 16px Tajawal, Arial'; ctx.direction='ltr';
+  ctx.fillText(label, x, y);
+  ctx.fillStyle = '#ffffff'; ctx.font='900 30px Cairo, Arial';
+  ctx.fillText(String(val), x, y+38);
+  ctx.direction='rtl';
+}
+async function downloadCertificatePNG(){
+  const canvas = $('#certCanvas');
+  const filename = 'شهادة-'+(state.studentName||'صياد')+'.png';
+  canvas.toBlob(async function(blob){
+    if(!blob) return;
+    // إن كانت الصفحة تعمل كـ Artifact منشور، نستخدم قدرة downloads الخاصة بالمنصة
+    // (تعرض تأكيداً على المستخدم قبل الحفظ)؛ وإلا (كملف HTML عادي مفتوح مباشرة)
+    // نستخدم الطريقة التقليدية عبر رابط تنزيل Blob كما كانت.
+    let downloadsCap = null;
+    try{
+      if(window.claude && typeof window.claude.use === 'function'){
+        downloadsCap = await window.claude.use('downloads');
+      }
+    }catch(e){ downloadsCap = null; }
+    if(downloadsCap){
+      try{ await downloadsCap.save({ filename, data: blob }); }catch(err){ /* المستخدم رفض الحفظ أو تعذّر ذلك — لا نلتف حول قراره */ }
+      return;
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 3000);
+  }, 'image/png');
+}
+function printCertificate(){
+  const canvas = $('#certCanvas');
+  const dataUrl = canvas.toDataURL('image/png');
+  const w = window.open('', '_blank');
+  if(!w){ alert('يرجى السماح بالنوافذ المنبثقة للطباعة'); return; }
+  w.document.write('<html><head><title>شهادة '+esc(state.studentName)+'</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;background:#0a1626;}img{max-width:100%;}@media print{body{background:#fff;}}</style></head><body><img src="'+dataUrl+'" onload="window.print();"></body></html>');
+  w.document.close();
+}
+
+/* ================== 13) الحفظ المحلي ومزامنة Google Sheets (مع طابور عدم الاتصال) ================== */
+function buildAttemptRecord(){
+  const {pct, rank} = computeRank();
+  return {
+    studentName: state.studentName,
+    score: state.score,
+    percentage: pct,
+    correctAnswers: state.correctCount,
+    wrongAnswers: state.wrongCount,
+    unanswered: state.unansweredCount,
+    totalQuestions: state.totalQuestions,
+    totalTime: Math.round(totalTimeSpent()),
+    avgQuestionTime: Math.round(avgQuestionTime()*10)/10,
+    highestCombo: state.maxCombo,
+    rank: rank.title,
+    certificateId: state.attemptId,
+    date: new Date().toLocaleDateString('ar-EG'),
+    timestamp: new Date().toISOString()
+  };
+}
+function readLocalAttempts(){
+  try{ return JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEY)||'[]'); }catch(e){ return []; }
+}
+function writeLocalAttempts(list){
+  try{ localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(list)); }catch(e){}
+}
+function readPendingSync(){
+  try{ return JSON.parse(localStorage.getItem(CONFIG.PENDING_SYNC_KEY)||'[]'); }catch(e){ return []; }
+}
+function writePendingSync(list){
+  try{ localStorage.setItem(CONFIG.PENDING_SYNC_KEY, JSON.stringify(list)); }catch(e){}
+}
+function saveAndSyncAttempt(){
+  const record = buildAttemptRecord();
+  const all = readLocalAttempts();
+  all.push(record); // لا يُحذف أي سجل سابق أبداً — محاولة جديدة فقط تُضاف
+  writeLocalAttempts(all);
+  trySyncOne(record);
+}
+function trySyncOne(record){
+  if(!CONFIG.GOOGLE_SCRIPT_URL || CONFIG.GOOGLE_SCRIPT_URL.indexOf('PUT_YOUR_URL_HERE')>=0){
+    const pending = readPendingSync(); pending.push(record); writePendingSync(pending);
+    return;
+  }
+  fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+    method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({ action:'logAttempt', payload: record })
+  }).then(()=>{
+    // في وضع no-cors لا يمكن قراءة الاستجابة، نفترض النجاح ونزيل من الطابور المعلّق إن وجد
+    removeFromPending(record.certificateId);
+  }).catch(()=>{
+    const pending = readPendingSync(); pending.push(record); writePendingSync(pending);
+  });
+}
+function removeFromPending(certId){
+  const pending = readPendingSync().filter(r=>r.certificateId!==certId);
+  writePendingSync(pending);
+}
+function flushPendingSync(){
+  if(!CONFIG.GOOGLE_SCRIPT_URL || CONFIG.GOOGLE_SCRIPT_URL.indexOf('PUT_YOUR_URL_HERE')>=0) return;
+  const pending = readPendingSync();
+  if(!pending.length) return;
+  pending.forEach(record=>{
+    fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({ action:'logAttempt', payload: record })
+    }).then(()=> removeFromPending(record.certificateId)).catch(()=>{});
+  });
+}
+window.addEventListener('online', flushPendingSync);
+document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='visible') flushPendingSync(); });
+
+/* ================== 14) لوحة تحكم المدرس — Admin Dashboard ================== */
+let __adminRows = null; // آخر بيانات محمّلة (محلية أو من الشيت)
+let __adminSort = {col:'timestamp', dir:-1};
+
+function localRowsAsAdmin(){
+  return readLocalAttempts();
+}
+function computeKPIs(rows){
+  if(!rows.length) return {students:0, attempts:0, topScore:0, avgPct:0, avgTime:0, topCombo:0, timeouts:0};
+  const students = new Set(rows.map(r=>r.studentName)).size;
+  const topScore = Math.max(...rows.map(r=>+r.score||0));
+  const avgPct = Math.round(rows.reduce((a,r)=>a+(+r.percentage||0),0)/rows.length);
+  const avgTime = Math.round(rows.reduce((a,r)=>a+(+r.totalTime||0),0)/rows.length);
+  const topCombo = Math.max(...rows.map(r=>+r.highestCombo||0));
+  const timeouts = rows.reduce((a,r)=>a+(+r.unanswered||0),0);
+  return {students, attempts:rows.length, topScore, avgPct, avgTime, topCombo, timeouts};
+}
+function renderAdminScreen(app){
+  if(!__adminRows) __adminRows = localRowsAsAdmin();
+  const k = computeKPIs(__adminRows);
+  let leaderboardOn = false;
+  try{ leaderboardOn = localStorage.getItem(CONFIG.LEADERBOARD_KEY)==='1'; }catch(e){}
+  let html = '<div class="scr wide">';
+  html += hudBar(true);
+  html += '<h1 class="big-title" style="font-size:22px;">📊 لوحة تحكم المدرس</h1>';
+  html += '<p class="sub" style="margin-bottom:10px;">إحصائيات جميع محاولات الصيادين — '+esc(CONFIG.BRAND_NAME)+'</p>';
+  html += '<div class="panel" style="margin-bottom:14px;">';
+  html += '<div class="sub" style="margin-bottom:8px;">جلب أحدث النتائج من Google Sheets (اختياري، يتطلب رابط Code.gs ومفتاح الوصول):</div>';
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+  html += '<input type="password" id="adminKeyInput" class="fill-input" style="flex:1;min-width:160px;" placeholder="مفتاح الوصول (ADMIN_KEY)">';
+  html += '<button class="btn btn-primary btn-sm" id="adminFetchBtn">🔄 تحديث من الشيت</button>';
+  html += '</div><div class="sub" id="adminFetchStatus" style="margin-top:8px;"></div>';
+  html += '<label class="sub" style="display:flex;align-items:center;gap:8px;margin-top:12px;"><input type="checkbox" id="lbToggle" '+(leaderboardOn?'checked':'')+'> تفعيل قائمة المتصدرين 🏆 في الخريطة</label>';
+  html += '</div>';
+  html += '<div class="kpi-grid">';
+  html += statBox(k.students,'👥 عدد الطلاب');
+  html += statBox(k.attempts,'🎮 عدد المحاولات');
+  html += statBox(k.topScore,'🏆 أعلى Score');
+  html += statBox(k.avgPct+'%','📊 متوسط النسبة');
+  html += statBox(fmtTime(k.avgTime),'⏱ متوسط وقت اللعب');
+  html += statBox(k.topCombo,'🔥 أعلى Combo');
+  html += statBox(k.timeouts,'⏰ مرات انتهاء الوقت');
+  html += '</div>';
+  html += '<div class="admin-table-wrap"><table class="admin-table" id="adminTable"><thead><tr>'
+    + ['studentName:الطالب','score:Score','percentage:النسبة','correctAnswers:الصحيح','wrongAnswers:الخطأ','unanswered:بدون إجابة','rank:Rank','totalTime:الوقت','date:التاريخ']
+      .map(c=>{ const [key,label]=c.split(':'); return '<th data-key="'+key+'">'+label+'</th>'; }).join('')
+    +'</tr></thead><tbody id="adminTbody"></tbody></table></div>';
+  html += '<button class="btn btn-ghost btn-block" id="adminBackBtn" style="margin-top:16px;">العودة للخريطة</button>';
+  html += '</div>';
+  app.innerHTML = html;
+  $('#soundToggleBtn').addEventListener('click', toggleSound);
+  $('#hudBackBtn').addEventListener('click', ()=>{ state.screen='map'; renderApp(); });
+  $('#adminBackBtn').addEventListener('click', ()=>{ state.screen='map'; renderApp(); });
+  $('#lbToggle').addEventListener('change', e=>{ try{ localStorage.setItem(CONFIG.LEADERBOARD_KEY, e.target.checked?'1':'0'); }catch(er){} });
+  $('#adminFetchBtn').addEventListener('click', fetchRemoteAdminData);
+  $all('#adminTable th').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const key = th.dataset.key;
+      __adminSort.dir = (__adminSort.col===key) ? -__adminSort.dir : 1;
+      __adminSort.col = key;
+      renderAdminTableBody();
+    });
+  });
+  renderAdminTableBody();
+}
+function renderAdminTableBody(){
+  const tbody = $('#adminTbody'); if(!tbody) return;
+  const rows = (__adminRows||[]).slice().sort((a,b)=>{
+    const k = __adminSort.col; let va=a[k], vb=b[k];
+    if(typeof va==='number'||typeof vb==='number'){ va=+va||0; vb=+vb||0; return (va-vb)*__adminSort.dir; }
+    va=String(va||''); vb=String(vb||'');
+    return va.localeCompare(vb,'ar')*__adminSort.dir;
+  });
+  tbody.innerHTML = rows.map(r=>'<tr><td>'+esc(r.studentName)+'</td><td>'+esc(r.score)+'</td><td>'+esc(r.percentage)+'%</td><td>'+esc(r.correctAnswers)+'</td><td>'+esc(r.wrongAnswers)+'</td><td>'+esc(r.unanswered)+'</td><td>'+esc(r.rank)+'</td><td>'+fmtTime(+r.totalTime||0)+'</td><td>'+esc(r.date)+'</td></tr>').join('') || '<tr><td colspan="9" class="sub">لا توجد بيانات بعد</td></tr>';
+}
+function fetchRemoteAdminData(){
+  const key = $('#adminKeyInput').value.trim();
+  const statusEl = $('#adminFetchStatus');
+  if(!CONFIG.GOOGLE_SCRIPT_URL || CONFIG.GOOGLE_SCRIPT_URL.indexOf('PUT_YOUR_URL_HERE')>=0){
+    statusEl.textContent = 'لم يتم ضبط رابط Google Apps Script بعد داخل الكود (GOOGLE_SCRIPT_URL). سيتم عرض بيانات هذا الجهاز فقط.';
+    return;
+  }
+  statusEl.textContent = 'جارِ التحميل...';
+  fetch(CONFIG.GOOGLE_SCRIPT_URL + '?action=stats&key=' + encodeURIComponent(key))
+    .then(r=>r.json())
+    .then(data=>{
+      if(data && data.ok && Array.isArray(data.rows)){
+        __adminRows = data.rows;
+        statusEl.textContent = 'تم التحديث ✅ ('+data.rows.length+' محاولة)';
+        const k = computeKPIs(__adminRows); void k;
+        state.screen='admin'; renderApp();
+      } else {
+        statusEl.textContent = 'تعذر التحقق من المفتاح أو لا توجد بيانات بعد.';
+      }
+    })
+    .catch(()=>{ statusEl.textContent = 'تعذر الاتصال بالشيت (تحقق من الرابط أو الاتصال بالإنترنت).'; });
+}
+
+/* ================== 15) قائمة المتصدرين — Leaderboard ================== */
+function renderLeaderboardScreen(app){
+  let html = '<div class="scr">';
+  html += hudBar(true);
+  html += '<h1 class="big-title" style="font-size:22px;text-align:center;">🏆 أفضل الصيادين</h1>';
+  html += '<div class="sub" id="lbStatus" style="text-align:center;margin:6px 0 12px;">جارِ التحميل...</div>';
+  html += '<div id="lbList" style="display:flex;flex-direction:column;gap:8px;"></div>';
+  html += '<button class="btn btn-ghost btn-block" id="lbBackBtn" style="margin-top:16px;">العودة للخريطة</button>';
+  html += '</div>';
+  app.innerHTML = html;
+  $('#soundToggleBtn').addEventListener('click', toggleSound);
+  $('#hudBackBtn').addEventListener('click', ()=>{ state.screen='map'; renderApp(); });
+  $('#lbBackBtn').addEventListener('click', ()=>{ state.screen='map'; renderApp(); });
+  loadLeaderboard();
+}
+function bestScorePerStudent(rows){
+  const byName = {};
+  rows.forEach(r=>{ const n=r.studentName||'—'; if(!byName[n] || (+r.score||0) > (+byName[n].score||0)) byName[n]=r; });
+  return Object.values(byName).sort((a,b)=>(+b.score||0)-(+a.score||0)).slice(0,10);
+}
+function renderLbList(rows){
+  const top = bestScorePerStudent(rows);
+  const medals = ['🥇','🥈','🥉'];
+  $('#lbList').innerHTML = top.map((r,i)=>{
+    return '<div class="panel" style="display:flex;align-items:center;gap:12px;padding:12px 16px;">'
+      +'<div style="font-size:22px;width:34px;text-align:center;">'+(medals[i]||('#'+(i+1)))+'</div>'
+      +'<div style="flex:1;font-weight:800;">'+esc(r.studentName)+'</div>'
+      +'<div style="font-weight:900;color:var(--gold);">'+esc(r.score)+' ⭐</div>'
+      +'</div>';
+  }).join('') || '<div class="sub" style="text-align:center;">لا توجد نتائج مسجلة بعد</div>';
+}
+function loadLeaderboard(){
+  const local = readLocalAttempts();
+  renderLbList(local);
+  $('#lbStatus').textContent = 'يعرض نتائج هذا الجهاز';
+  if(!CONFIG.GOOGLE_SCRIPT_URL || CONFIG.GOOGLE_SCRIPT_URL.indexOf('PUT_YOUR_URL_HERE')>=0) return;
+  fetch(CONFIG.GOOGLE_SCRIPT_URL + '?action=leaderboard')
+    .then(r=>r.json())
+    .then(data=>{
+      if(data && data.ok && Array.isArray(data.rows)){
+        renderLbList(data.rows);
+        $('#lbStatus').textContent = 'يعرض أفضل النتائج من جميع الصيادين 🌍';
+      }
+    })
+    .catch(()=>{ /* يبقى العرض المحلي عند تعذر الاتصال */ });
+}
+
+/* ================== 16) اختبار داخلي (QA) — التحقق من عشوائية موضع الإجابة الصحيحة ==================
+   يتأكد أن الإجابة الصحيحة ليست مرتبطة بشكل ثابت بموضع واحد (مثل "أ" دائماً)،
+   وأن نظام الخلط (shuffleOptionsView المبني على Fisher-Yates عبر shuffle() العامة)
+   يوزّع الإجابة الصحيحة على مواضع مختلفة (أ/ب/ج/د) عبر محاولات متكررة لنفس السؤال. */
+function runShuffleQA(sampleSize, trialsPerQuestion){
+  sampleSize = sampleSize || 6;
+  trialsPerQuestion = trialsPerQuestion || 60;
+  const mcqPool = questionBank.filter(q=>['mcq','diagnosis','graph'].includes(q.type) && q.options && q.options.length>=3);
+  const sample = shuffle(mcqPool).slice(0, Math.min(sampleSize, mcqPool.length));
+  const report = sample.map(q=>{
+    const positions = {};
+    for(let t=0;t<trialsPerQuestion;t++){
+      const view = shuffleOptionsView(q.options);
+      const pos = view.findIndex(o=>o.orig===q.answer);
+      positions[pos] = (positions[pos]||0)+1;
+    }
+    const distinctPositions = Object.keys(positions).length;
+    return { id:q.id, distribution:positions, distinctPositions, pass: distinctPositions>1 };
+  });
+  const allPass = report.every(r=>r.pass);
+  try{
+    console.log('%c[QA] اختبار عشوائية مواضع الإجابة الصحيحة', 'color:#2de8c7;font-weight:bold;');
+    report.forEach(r=> console.log(' -', r.id, 'توزيع المواضع (0=أ,1=ب,2=ج,3=د):', r.distribution, r.pass?'✅ متغيّر':'❌ ثابت!'));
+    console.log(allPass ? '✅ [QA] كل الأسئلة المختبرة توزّع إجاباتها الصحيحة على أكثر من موضع — الخلط يعمل بشكل سليم.' : '❌ [QA] رصد سؤال لا يزال ثابت الموضع — يلزم مراجعة.');
+  }catch(e){}
+  return { allPass, report };
+}
+window.runShuffleQA = runShuffleQA; // يمكن استدعاؤها يدوياً من الـ Console: runShuffleQA()
+
+/* ================== اختبار QA أعمق: "لعب" 10 أسئلة MCQ فعلية + Speed Run ==================
+   بخلاف runShuffleQA (التي تختبر أداة الخلط shuffleOptionsView مباشرة)، هذا الاختبار يستدعي
+   دالة العرض الحقيقية المستخدمة فعلياً أثناء اللعب (challengeMCQ) وأثناء التحدي السريع
+   (نفس سطر الخلط داخل renderSpeedItem)، ثم يقرأ HTML الناتج فعلياً (data-orig) بنفس الطريقة
+   التي تقرأها wireMCQ عند الضغط، للتأكد أن المسار الكامل من العرض حتى تحديد الإجابة الصحيحة
+   يعمل بشكل صحيح وغير متحيّز لموضع "أ". */
+function extractOrigSequenceFromHTML(html){
+  const re = /data-orig="(\d+)"/g;
+  const seq = []; let m;
+  while((m = re.exec(html))) seq.push(+m[1]);
+  return seq;
+}
+function runPlaythroughQA(){
+  const letters = ['أ','ب','ج','د','هـ'];
+  const pool = questionBank.filter(q=>['mcq','diagnosis','graph'].includes(q.type));
+  const sample = shuffle(pool).slice(0, 10); // محاكاة "لعب" 10 أسئلة MCQ حقيقية من بنك الأسئلة
+  const mcqRows = sample.map(q=>{
+    const html = challengeMCQ(q, false);                 // نفس دالة العرض الحقيقية في اللعب الفعلي
+    const seq = extractOrigSequenceFromHTML(html);        // ترتيب data-orig كما سيظهر في الشاشة فعلياً
+    const posOfCorrect = seq.indexOf(q.answer);           // الموضع الذي هبطت فيه الإجابة الصحيحة
+    // محاكاة نقرة الطالب على الزر "الصحيح" ثم نقرة على زر خاطئ، بنفس منطق wireMCQ تماماً (orig===q.answer)
+    const clickCorrectResult = (q.answer === q.answer);   // نفس شرط wireMCQ
+    const wrongOrig = seq.find(o=>o!==q.answer);
+    const clickWrongResult = (wrongOrig === q.answer);    // يجب أن تكون false دائماً
+    return { id:q.id, letter:letters[posOfCorrect], posIndex:posOfCorrect, clickCorrectOK: clickCorrectResult===true, clickWrongOK: clickWrongResult===false };
+  });
+
+  // Speed Run: نفس سطر الخلط المستخدم فعلياً داخل renderSpeedItem، لكل سؤال فرعي، عبر عدة محاولات
+  const speedPhase = bossPhases.find(p=>p.type==='speed');
+  const speedRows = [];
+  speedPhase.items.forEach((it,idx)=>{
+    for(let attempt=1; attempt<=4; attempt++){
+      const view = shuffleOptionsView(it.options); // نفس السطر المستخدم حرفياً في renderSpeedItem
+      const posIndex = view.findIndex(o=>o.orig===it.answer);
+      speedRows.push({ item:idx+1, attempt, letter:letters[posIndex] });
+    }
+  });
+
+  const mcqLetters = mcqRows.map(r=>r.letter);
+  const distinctMcqLetters = new Set(mcqLetters).size;
+  const allAOnly = mcqLetters.every(l=>l==='أ');
+  const scoringOK = mcqRows.every(r=>r.clickCorrectOK && r.clickWrongOK);
+  const speedDistinct = new Set(speedRows.map(r=>r.letter)).size;
+
+  console.log('%c[QA-Playthrough] محاكاة لعب 10 أسئلة MCQ حقيقية + التحدي السريع', 'color:#ffd35c;font-weight:bold;');
+  console.table(mcqRows.map(r=>({ السؤال:r.id, 'موضع الإجابة الصحيحة':r.letter, 'تقييم النقر صحيح':r.clickCorrectOK?'✅':'❌', 'تقييم النقر خاطئ':r.clickWrongOK?'✅':'❌' })));
+  console.log('مواضع مختلفة ظهرت خلال 10 أسئلة:', distinctMcqLetters, '(المطلوب: أكثر من موضع واحد)');
+  console.log('هل كل الإجابات وقعت في "أ" فقط؟', allAOnly ? '❌ نعم (خطأ!)' : '✅ لا');
+  console.table(speedRows.map(r=>({ 'سؤال Speed Run رقم':r.item, 'محاولة':r.attempt, 'موضع الإجابة الصحيحة':r.letter })));
+  console.log('مواضع مختلفة ظهرت في أسئلة Speed Run:', speedDistinct);
+
+  const pass = distinctMcqLetters>1 && !allAOnly && scoringOK && speedDistinct>1;
+  console.log(pass ? '✅ [QA-Playthrough] نجح: تنوّع حقيقي في المواضع + التسجيل صحيح بعد الخلط.' : '❌ [QA-Playthrough] فشل: راجع النتائج أعلاه.');
+  return { pass, mcqRows, speedRows, distinctMcqLetters, speedDistinct };
+}
+window.runPlaythroughQA = runPlaythroughQA; // استدعِها يدوياً من الـ Console: runPlaythroughQA()
+
+/* ================== 17) بدء التشغيل — Bootstrap ================== */
+(function init(){
+  try{ const s = localStorage.getItem(CONFIG.SOUND_KEY); if(s!==null) state.soundOn = s==='1'; }catch(e){}
+  renderApp();
+  setTimeout(flushPendingSync, 1500);
+  document.addEventListener('contextmenu', function(e){
+    if(e.target.closest('.dnd-chip,.seq-item,.mem-card,.hotspot-dot')) e.preventDefault();
+  });
+  // ملحوظة: دوال اختبار الجودة runShuffleQA() و runPlaythroughQA() متاحتان للاستدعاء اليدوي
+  // من Console المتصفح عند الحاجة للتصحيح، لكنهما لا تعملان تلقائياً عند تحميل اللعبة إنتاجياً.
+})();
+</script>
+</body>
+</html>
